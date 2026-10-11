@@ -1,4 +1,4 @@
-import { existsSync } from 'node:fs';
+import { existsSync, readFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { defineConfig, type Plugin } from 'vite';
 import tailwindcss from '@tailwindcss/vite';
@@ -17,10 +17,11 @@ function siteHtml(): Plugin {
   const hasVideo = existsSync(resolve(videoDir, 'intro.mp4'));
   const hasPoster = existsSync(resolve(videoDir, 'poster.jpg'));
   const hasWebm = existsSync(resolve(videoDir, 'intro.webm'));
+  const partial = (name: string) => readFileSync(resolve(import.meta.dirname, `src/partials/${name}.html`), 'utf8').trimEnd();
   return {
     name: 'idx-site-html',
     transformIndexHtml(html) {
-      let out = html;
+      let out = html.replace('{{HEADER}}', partial('header')).replace('{{FOOTER}}', partial('footer'));
       const keep = (name: string, on: boolean) => {
         const re = new RegExp(`<!--${name}-->([\\s\\S]*?)<!--/${name}-->`, 'g');
         out = out.replace(re, on ? '$1' : '');
@@ -30,7 +31,7 @@ function siteHtml(): Plugin {
       keep('webm', hasWebm);
       keep('appRepo', site.DOCS_PUBLIC);
       return out.replace(/\{\{([A-Z_]+)\}\}/g, (match, key: string) => {
-        if (key === 'BASE') return BASE;
+        if (key === 'BASE' || key === 'HOME') return BASE;
         if (key === 'DOCS_LINK') return site.DOCS_PUBLIC ? site.DOCS_URL : '#faq';
         if (key === 'GITHUB_LINK') return site.DOCS_PUBLIC ? site.APP_REPO_URL : site.ORG_URL;
         if (key === 'POSTER_ATTR') return hasPoster ? `poster="${BASE}video/poster.jpg"` : '';
@@ -48,5 +49,14 @@ export default defineConfig({
   build: {
     target: 'es2022',
     assetsInlineLimit: 0,
+    rollupOptions: {
+      // The legal pages are generated from legal/*.md by scripts/legal.mjs before every build.
+      input: {
+        main: resolve(import.meta.dirname, 'index.html'),
+        terms: resolve(import.meta.dirname, 'legal/terms/index.html'),
+        privacy: resolve(import.meta.dirname, 'legal/privacy/index.html'),
+        notices: resolve(import.meta.dirname, 'legal/third-party-notices/index.html'),
+      },
+    },
   },
 });

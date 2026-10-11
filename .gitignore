@@ -4,3 +4,5 @@ dist/
 *.log
 .lighthouse/
 .tokenize/
+legal/*/
+legal/*/index.html

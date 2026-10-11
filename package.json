@@ -5,8 +5,8 @@
   "type": "module",
   "description": "Landing page for IDX",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
+    "dev": "node scripts/legal.mjs && vite",
+    "build": "node scripts/legal.mjs && vite build",
     "preview": "vite preview",
     "typecheck": "tsc --noEmit",
     "og": "node scripts/og.mjs"
@@ -14,6 +14,7 @@
   "devDependencies": {
     "@tailwindcss/vite": "^4.3.3",
     "@types/node": "^22",
+    "marked": "^18.1.0",
     "tailwindcss": "^4.3.3",
     "typescript": "^5.9.3",
     "vite": "^8.3.4"

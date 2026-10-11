@@ -1,0 +1,275 @@
+# Third-party notices
+
+_Last updated 2026-10-11. Generated from the production dependency tree of the IDX app (`pnpm -r licenses list --prod`, 248 packages). Each package is used under the licence named below; the full licence texts ship inside the application bundle (`node_modules/<package>/LICENSE`)._
+
+## Runtime platform
+
+| Component | Version | Licence | Source |
+|---|---|---|---|
+| Electron (bundles Chromium and Node.js; their notices are in `LICENSES.chromium.html` inside the app bundle) | 44.7.0 | MIT | https://github.com/electron/electron |
+| Claude Code CLI (`claude`) | installed by the user, not bundled | Anthropic Consumer or Commercial Terms, see https://code.claude.com/docs/en/legal-and-compliance | https://code.claude.com |
+| Antigravity CLI (`agy`) / Gemini CLI | installed by the user, not bundled | Google Antigravity Additional Terms https://antigravity.google/terms ; Gemini CLI Apache-2.0 | https://antigravity.google ; https://github.com/google-gemini/gemini-cli |
+
+## Packages bundled in the app
+
+| Package | Version | Licence | URL |
+|---|---|---|---|
+| @anthropic-ai/claude-agent-sdk | 0.3.296 | Proprietary: "© Anthropic PBC. All rights reserved. Use is subject to the Legal Agreements outlined here: https://code.claude.com/docs/en/legal-and-compliance" (package LICENSE); governed by Anthropic Commercial Terms per https://code.claude.com/docs/en/agent-sdk/overview | https://github.com/anthropics/claude-agent-sdk-typescript |
+| @anthropic-ai/sdk | 0.133.0 | MIT | https://github.com/anthropics/anthropic-sdk-typescript#readme |
+| @babel/runtime | 7.29.10 | MIT | https://babel.dev/docs/en/next/babel-runtime |
+| @hono/node-server | 2.1.4 | MIT | https://github.com/honojs/node-server |
+| @modelcontextprotocol/sdk | 1.32.1 | MIT | https://modelcontextprotocol.io |
+| @shikijs/core | 4.5.0 | MIT | https://github.com/shikijs/shiki#readme |
+| @shikijs/engine-javascript | 4.5.0 | MIT | https://github.com/shikijs/shiki#readme |
+| @shikijs/engine-oniguruma | 4.5.0 | MIT | https://github.com/shikijs/shiki#readme |
+| @shikijs/langs | 4.5.0 | MIT | https://github.com/shikijs/shiki#readme |
+| @shikijs/primitive | 4.5.0 | MIT | https://github.com/shikijs/shiki#readme |
+| @shikijs/themes | 4.5.0 | MIT | https://github.com/shikijs/shiki#readme |
+| @shikijs/types | 4.5.0 | MIT | https://github.com/shikijs/shiki#readme |
+| @shikijs/vscode-textmate | 10.0.2 | MIT | https://github.com/shikijs/vscode-textmate#readme |
+| @stablelib/base64 | 1.0.1 | MIT | https://github.com/StableLib/stablelib/tree/master/packages/base64 |
+| @types/debug | 4.1.13 | MIT | https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/debug |
+| @types/estree | 1.0.9 | MIT | https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/estree |
+| @types/estree-jsx | 1.0.5 | MIT | https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/estree-jsx |
+| @types/hast | 3.0.5 | MIT | https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/hast |
+| @types/mdast | 4.0.4 | MIT | https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/mdast |
+| @types/ms | 2.1.0 | MIT | https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/ms |
+| @types/react | 19.3.0 | MIT | https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/react |
+| @types/unist | 2.0.11 | MIT | https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/unist |
+| @types/unist | 3.0.3 | MIT | https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/unist |
+| @ungap/structured-clone | 1.4.0 | ISC | https://github.com/ungap/structured-clone#readme |
+| @xterm/addon-fit | 0.11.0 | MIT | https://github.com/xtermjs/xterm.js/tree/master#readme |
+| @xterm/addon-webgl | 0.19.0 | MIT | https://github.com/xtermjs/xterm.js/tree/master#readme |
+| @xterm/xterm | 6.0.0 | MIT | https://github.com/xtermjs/xterm.js#readme |
+| accepts | 2.0.0 | MIT | https://github.com/jshttp/accepts#readme |
+| ajv | 8.20.0 | MIT | https://ajv.js.org |
+| ajv-formats | 3.0.1 | MIT | https://github.com/ajv-validator/ajv-formats#readme |
+| argparse | 2.0.1 | Python-2.0 | https://github.com/nodeca/argparse#readme |
+| bail | 2.0.2 | MIT | https://github.com/wooorm/bail#readme |
+| better-sqlite3 | 13.0.3 | MIT | http://github.com/WiseLibs/better-sqlite3 |
+| body-parser | 2.3.0 | MIT | https://github.com/expressjs/body-parser#readme |
+| builder-util-runtime | 9.7.0 | MIT | https://github.com/electron-userland/electron-builder |
+| bytes | 3.1.2 | MIT | https://github.com/visionmedia/bytes.js#readme |
+| call-bind-apply-helpers | 1.0.2 | MIT | https://github.com/ljharb/call-bind-apply-helpers#readme |
+| call-bound | 1.0.4 | MIT | https://github.com/ljharb/call-bound#readme |
+| ccount | 2.0.1 | MIT | https://github.com/wooorm/ccount#readme |
+| character-entities | 2.0.2 | MIT | https://github.com/wooorm/character-entities#readme |
+| character-entities-html4 | 2.1.0 | MIT | https://github.com/wooorm/character-entities-html4#readme |
+| character-entities-legacy | 3.0.0 | MIT | https://github.com/wooorm/character-entities-legacy#readme |
+| character-reference-invalid | 2.0.1 | MIT | https://github.com/wooorm/character-reference-invalid#readme |
+| chokidar | 5.0.0 | MIT | https://github.com/paulmillr/chokidar |
+| comma-separated-tokens | 2.0.3 | MIT | https://github.com/wooorm/comma-separated-tokens#readme |
+| content-disposition | 2.0.1 | MIT | https://github.com/jshttp/content-disposition#readme |
+| content-type | 1.0.5 | MIT | https://github.com/jshttp/content-type#readme |
+| content-type | 2.1.0 | MIT | https://github.com/jshttp/content-type#readme |
+| cookie | 0.7.2 | MIT | https://github.com/jshttp/cookie#readme |
+| cookie-signature | 1.2.2 | MIT | https://github.com/visionmedia/node-cookie-signature#readme |
+| cors | 2.8.6 | MIT | https://github.com/expressjs/cors#readme |
+| cross-spawn | 7.0.6 | MIT | https://github.com/moxystudio/node-cross-spawn |
+| csstype | 3.2.3 | MIT | https://github.com/frenic/csstype#readme |
+| debug | 4.4.3 | MIT | https://github.com/debug-js/debug#readme |
+| decode-named-character-reference | 1.3.0 | MIT | https://github.com/wooorm/decode-named-character-reference#readme |
+| depd | 2.0.0 | MIT | https://github.com/dougwilson/nodejs-depd#readme |
+| dequal | 2.0.3 | MIT | https://github.com/lukeed/dequal#readme |
+| devlop | 1.1.0 | MIT | https://github.com/wooorm/devlop#readme |
+| dunder-proto | 1.0.1 | MIT | https://github.com/es-shims/dunder-proto#readme |
+| ee-first | 1.1.1 | MIT | https://github.com/jonathanong/ee-first#readme |
+| electron-updater | 6.8.9 | MIT | https://github.com/electron-userland/electron-builder |
+| encodeurl | 2.0.0 | MIT | https://github.com/pillarjs/encodeurl#readme |
+| es-define-property | 1.0.1 | MIT | https://github.com/ljharb/es-define-property#readme |
+| es-errors | 1.3.0 | MIT | https://github.com/ljharb/es-errors#readme |
+| es-object-atoms | 1.1.2 | MIT | https://github.com/ljharb/es-object-atoms#readme |
+| escape-html | 1.0.3 | MIT | https://github.com/component/escape-html#readme |
+| escape-string-regexp | 5.0.0 | MIT | https://github.com/sindresorhus/escape-string-regexp#readme |
+| estree-util-is-identifier-name | 3.0.0 | MIT | https://github.com/syntax-tree/estree-util-is-identifier-name#readme |
+| etag | 1.8.1 | MIT | https://github.com/jshttp/etag#readme |
+| eventsource | 3.0.7 | MIT | https://github.com/EventSource/eventsource#readme |
+| eventsource-parser | 3.1.1 | MIT | https://github.com/rexxars/eventsource-parser#readme |
+| express | 5.3.0 | MIT | https://expressjs.com/ |
+| express-rate-limit | 8.7.1 | MIT | https://github.com/express-rate-limit/express-rate-limit |
+| extend | 3.0.2 | MIT | https://github.com/justmoon/node-extend#readme |
+| fast-deep-equal | 3.1.3 | MIT | https://github.com/epoberezkin/fast-deep-equal#readme |
+| fast-sha256 | 1.3.0 | Unlicense | https://github.com/dchest/fast-sha256-js#readme |
+| fast-uri | 3.1.8 | BSD-3-Clause | https://github.com/fastify/fast-uri |
+| finalhandler | 2.1.1 | MIT | https://github.com/pillarjs/finalhandler#readme |
+| forwarded | 0.2.0 | MIT | https://github.com/jshttp/forwarded#readme |
+| fresh | 2.0.0 | MIT | https://github.com/jshttp/fresh#readme |
+| fs-extra | 10.1.0 | MIT | https://github.com/jprichardson/node-fs-extra |
+| function-bind | 1.1.2 | MIT | https://github.com/Raynos/function-bind |
+| get-intrinsic | 1.3.0 | MIT | https://github.com/ljharb/get-intrinsic#readme |
+| get-proto | 1.0.1 | MIT | https://github.com/ljharb/get-proto#readme |
+| gopd | 1.2.0 | MIT | https://github.com/ljharb/gopd#readme |
+| graceful-fs | 4.2.11 | ISC | https://github.com/isaacs/node-graceful-fs#readme |
+| has-symbols | 1.1.0 | MIT | https://github.com/ljharb/has-symbols#readme |
+| hasown | 2.0.4 | MIT | https://github.com/inspect-js/hasOwn#readme |
+| hast-util-to-html | 9.0.5 | MIT | https://github.com/syntax-tree/hast-util-to-html#readme |
+| hast-util-to-jsx-runtime | 2.3.6 | MIT | https://github.com/syntax-tree/hast-util-to-jsx-runtime#readme |
+| hast-util-whitespace | 3.0.0 | MIT | https://github.com/syntax-tree/hast-util-whitespace#readme |
+| hono | 4.13.13 | MIT | https://hono.dev |
+| html-url-attributes | 3.0.1 | MIT | https://github.com/rehypejs/rehype-minify/tree/main#readme |
+| html-void-elements | 3.0.0 | MIT | https://github.com/wooorm/html-void-elements#readme |
+| http-errors | 2.0.1 | MIT | https://github.com/jshttp/http-errors#readme |
+| iconv-lite | 0.7.3 | MIT | https://github.com/pillarjs/iconv-lite |
+| ignore | 7.0.12 | MIT | https://github.com/kaelzhang/node-ignore#readme |
+| inherits | 2.0.4 | ISC | https://github.com/isaacs/inherits#readme |
+| inline-style-parser | 0.2.7 | MIT | https://github.com/remarkablemark/inline-style-parser#readme |
+| ip-address | 10.7.3 | MIT | https://github.com/beaugunderson/ip-address#readme |
+| ipaddr.js | 1.9.1 | MIT | https://github.com/whitequark/ipaddr.js#readme |
+| is-alphabetical | 2.0.1 | MIT | https://github.com/wooorm/is-alphabetical#readme |
+| is-alphanumerical | 2.0.1 | MIT | https://github.com/wooorm/is-alphanumerical#readme |
+| is-decimal | 2.0.1 | MIT | https://github.com/wooorm/is-decimal#readme |
+| is-hexadecimal | 2.0.1 | MIT | https://github.com/wooorm/is-hexadecimal#readme |
+| is-plain-obj | 4.1.0 | MIT | https://github.com/sindresorhus/is-plain-obj#readme |
+| is-promise | 4.0.0 | MIT | https://github.com/then/is-promise#readme |
+| isexe | 2.0.0 | ISC | https://github.com/isaacs/isexe#readme |
+| jose | 6.2.12 | MIT | https://github.com/panva/jose |
+| js-yaml | 4.3.2 | MIT | https://github.com/nodeca/js-yaml#readme |
+| json-schema-to-ts | 3.1.1 | MIT | https://github.com/ThomasAribart/json-schema-to-ts#readme |
+| json-schema-traverse | 1.0.0 | MIT | https://github.com/epoberezkin/json-schema-traverse#readme |
+| json-schema-typed | 8.0.2 | BSD-2-Clause | https://github.com/RemyRylan/json-schema-typed/tree/main/dist/node |
+| jsonfile | 6.2.1 | MIT | https://github.com/jprichardson/node-jsonfile#readme |
+| lazy-val | 1.0.5 | MIT | https://github.com/develar/lazy-val |
+| lodash.escaperegexp | 4.1.2 | MIT | https://lodash.com/ |
+| lodash.isequal | 4.5.0 | MIT | https://lodash.com/ |
+| longest-streak | 3.1.0 | MIT | https://github.com/wooorm/longest-streak#readme |
+| lucide-react | 1.54.0 | ISC | https://lucide.dev |
+| markdown-table | 3.0.4 | MIT | https://github.com/wooorm/markdown-table#readme |
+| math-intrinsics | 1.1.0 | MIT | https://github.com/es-shims/math-intrinsics#readme |
+| mdast-util-find-and-replace | 3.0.3 | MIT | https://github.com/syntax-tree/mdast-util-find-and-replace#readme |
+| mdast-util-from-markdown | 2.1.0 | MIT | https://github.com/syntax-tree/mdast-util-from-markdown#readme |
+| mdast-util-gfm | 3.1.0 | MIT | https://github.com/syntax-tree/mdast-util-gfm#readme |
+| mdast-util-gfm-autolink-literal | 2.0.1 | MIT | https://github.com/syntax-tree/mdast-util-gfm-autolink-literal#readme |
+| mdast-util-gfm-footnote | 2.1.0 | MIT | https://github.com/syntax-tree/mdast-util-gfm-footnote#readme |
+| mdast-util-gfm-strikethrough | 2.0.1 | MIT | https://github.com/syntax-tree/mdast-util-gfm-strikethrough#readme |
+| mdast-util-gfm-table | 2.0.0 | MIT | https://github.com/syntax-tree/mdast-util-gfm-table#readme |
+| mdast-util-gfm-task-list-item | 2.0.0 | MIT | https://github.com/syntax-tree/mdast-util-gfm-task-list-item#readme |
+| mdast-util-mdx-expression | 2.0.1 | MIT | https://github.com/syntax-tree/mdast-util-mdx-expression#readme |
+| mdast-util-mdx-jsx | 3.2.0 | MIT | https://github.com/syntax-tree/mdast-util-mdx-jsx#readme |
+| mdast-util-mdxjs-esm | 2.0.1 | MIT | https://github.com/syntax-tree/mdast-util-mdxjs-esm#readme |
+| mdast-util-phrasing | 4.1.0 | MIT | https://github.com/syntax-tree/mdast-util-phrasing#readme |
+| mdast-util-to-hast | 13.2.1 | MIT | https://github.com/syntax-tree/mdast-util-to-hast#readme |
+| mdast-util-to-markdown | 2.2.0 | MIT | https://github.com/syntax-tree/mdast-util-to-markdown#readme |
+| mdast-util-to-string | 4.0.0 | MIT | https://github.com/syntax-tree/mdast-util-to-string#readme |
+| media-typer | 1.1.1 | MIT | https://github.com/jshttp/media-typer#readme |
+| merge-descriptors | 2.0.0 | MIT | https://github.com/sindresorhus/merge-descriptors#readme |
+| micromark | 4.0.3 | MIT | https://github.com/micromark/micromark/tree/main#readme |
+| micromark-core-commonmark | 2.0.4 | MIT | https://github.com/micromark/micromark/tree/main#readme |
+| micromark-extension-gfm | 3.0.0 | MIT | https://github.com/micromark/micromark-extension-gfm#readme |
+| micromark-extension-gfm-autolink-literal | 2.1.0 | MIT | https://github.com/micromark/micromark-extension-gfm-autolink-literal#readme |
+| micromark-extension-gfm-footnote | 2.1.0 | MIT | https://github.com/micromark/micromark-extension-gfm-footnote#readme |
+| micromark-extension-gfm-strikethrough | 2.1.0 | MIT | https://github.com/micromark/micromark-extension-gfm-strikethrough#readme |
+| micromark-extension-gfm-table | 2.1.2 | MIT | https://github.com/micromark/micromark-extension-gfm-table#readme |
+| micromark-extension-gfm-tagfilter | 2.0.0 | MIT | https://github.com/micromark/micromark-extension-gfm-tagfilter#readme |
+| micromark-extension-gfm-task-list-item | 2.1.0 | MIT | https://github.com/micromark/micromark-extension-gfm-task-list-item#readme |
+| micromark-factory-destination | 2.0.1 | MIT | https://github.com/micromark/micromark/tree/main#readme |
+| micromark-factory-label | 2.0.1 | MIT | https://github.com/micromark/micromark/tree/main#readme |
+| micromark-factory-space | 2.1.0 | MIT | https://github.com/micromark/micromark/tree/main#readme |
+| micromark-factory-title | 2.0.1 | MIT | https://github.com/micromark/micromark/tree/main#readme |
+| micromark-factory-whitespace | 2.0.1 | MIT | https://github.com/micromark/micromark/tree/main#readme |
+| micromark-util-character | 2.1.1 | MIT | https://github.com/micromark/micromark/tree/main#readme |
+| micromark-util-chunked | 2.0.1 | MIT | https://github.com/micromark/micromark/tree/main#readme |
+| micromark-util-classify-character | 2.0.1 | MIT | https://github.com/micromark/micromark/tree/main#readme |
+| micromark-util-combine-extensions | 2.0.1 | MIT | https://github.com/micromark/micromark/tree/main#readme |
+| micromark-util-decode-numeric-character-reference | 2.0.2 | MIT | https://github.com/micromark/micromark/tree/main#readme |
+| micromark-util-decode-string | 2.0.1 | MIT | https://github.com/micromark/micromark/tree/main#readme |
+| micromark-util-edit-map | 1.0.0 | MIT | https://github.com/micromark/micromark/tree/main#readme |
+| micromark-util-encode | 2.0.1 | MIT | https://github.com/micromark/micromark/tree/main#readme |
+| micromark-util-html-tag-name | 2.0.1 | MIT | https://github.com/micromark/micromark/tree/main#readme |
+| micromark-util-normalize-identifier | 2.0.1 | MIT | https://github.com/micromark/micromark/tree/main#readme |
+| micromark-util-resolve-all | 2.0.1 | MIT | https://github.com/micromark/micromark/tree/main#readme |
+| micromark-util-sanitize-uri | 2.0.1 | MIT | https://github.com/micromark/micromark/tree/main#readme |
+| micromark-util-subtokenize | 2.1.0 | MIT | https://github.com/micromark/micromark/tree/main#readme |
+| micromark-util-symbol | 2.0.1 | MIT | https://github.com/micromark/micromark/tree/main#readme |
+| micromark-util-types | 2.0.3 | MIT | https://github.com/micromark/micromark/tree/main#readme |
+| mime-db | 1.54.0 | MIT | https://github.com/jshttp/mime-db#readme |
+| mime-types | 3.0.2 | MIT | https://github.com/jshttp/mime-types#readme |
+| ms | 2.1.3 | MIT | https://github.com/vercel/ms#readme |
+| negotiator | 1.1.0 | MIT | https://github.com/jshttp/negotiator#readme |
+| node-addon-api | 7.1.1 | MIT | https://github.com/nodejs/node-addon-api |
+| node-addon-api | 8.9.2 | MIT | https://github.com/nodejs/node-addon-api |
+| node-pty | 1.1.0 | MIT | https://github.com/microsoft/node-pty |
+| object-assign | 4.1.1 | MIT | https://github.com/sindresorhus/object-assign#readme |
+| object-inspect | 1.13.4 | MIT | https://github.com/inspect-js/object-inspect |
+| on-finished | 2.4.1 | MIT | https://github.com/jshttp/on-finished#readme |
+| once | 1.4.0 | ISC | https://github.com/isaacs/once#readme |
+| oniguruma-parser | 0.12.2 | MIT | https://github.com/slevithan/oniguruma-parser#readme |
+| oniguruma-to-es | 4.3.6 | MIT | https://github.com/slevithan/oniguruma-to-es#readme |
+| parse-entities | 4.0.2 | MIT | https://github.com/wooorm/parse-entities#readme |
+| parseurl | 1.3.3 | MIT | https://github.com/pillarjs/parseurl#readme |
+| path-key | 3.1.1 | MIT | https://github.com/sindresorhus/path-key#readme |
+| path-to-regexp | 8.4.2 | MIT | https://github.com/pillarjs/path-to-regexp#readme |
+| pkce-challenge | 5.0.1 | MIT | https://github.com/crouchcd/pkce-challenge#readme |
+| property-information | 7.2.0 | MIT | https://github.com/wooorm/property-information#readme |
+| proxy-addr | 2.0.8 | MIT | https://github.com/jshttp/proxy-addr#readme |
+| qs | 6.16.0 | BSD-3-Clause | https://github.com/ljharb/qs |
+| range-parser | 1.3.0 | MIT | https://github.com/jshttp/range-parser#readme |
+| raw-body | 3.0.2 | MIT | https://github.com/stream-utils/raw-body#readme |
+| react | 19.3.0 | MIT | https://react.dev/ |
+| react-dom | 19.3.0 | MIT | https://react.dev/ |
+| react-markdown | 10.1.0 | MIT | https://github.com/remarkjs/react-markdown#readme |
+| readdirp | 5.1.1 | MIT | https://github.com/paulmillr/readdirp |
+| regex | 6.1.0 | MIT | https://github.com/slevithan/regex#readme |
+| regex-recursion | 6.0.2 | MIT | https://github.com/slevithan/regex-recursion#readme |
+| regex-utilities | 2.3.0 | MIT | https://github.com/slevithan/regex-utilities#readme |
+| remark-gfm | 4.0.1 | MIT | https://github.com/remarkjs/remark-gfm#readme |
+| remark-parse | 11.0.0 | MIT | https://remark.js.org |
+| remark-rehype | 11.1.2 | MIT | https://github.com/remarkjs/remark-rehype#readme |
+| remark-stringify | 11.0.0 | MIT | https://remark.js.org |
+| require-from-string | 2.0.2 | MIT | https://github.com/floatdrop/require-from-string#readme |
+| router | 2.2.0 | MIT | https://github.com/pillarjs/router#readme |
+| safer-buffer | 2.1.2 | MIT | https://github.com/ChALkeR/safer-buffer#readme |
+| sax | 1.6.1 | BlueOak-1.0.0 | https://github.com/isaacs/sax-js#readme |
+| scheduler | 0.28.0 | MIT | https://react.dev/ |
+| semver | 7.7.4 | ISC | https://github.com/npm/node-semver#readme |
+| send | 1.2.1 | MIT | https://github.com/pillarjs/send#readme |
+| serve-static | 2.2.1 | MIT | https://github.com/expressjs/serve-static#readme |
+| setprototypeof | 1.2.0 | ISC | https://github.com/wesleytodd/setprototypeof |
+| shebang-command | 2.0.0 | MIT | https://github.com/kevva/shebang-command#readme |
+| shebang-regex | 3.0.0 | MIT | https://github.com/sindresorhus/shebang-regex#readme |
+| shiki | 4.5.0 | MIT | https://github.com/shikijs/shiki#readme |
+| side-channel | 1.1.1 | MIT | https://github.com/ljharb/side-channel#readme |
+| side-channel-list | 1.0.1 | MIT | https://github.com/ljharb/side-channel-list#readme |
+| side-channel-map | 1.0.1 | MIT | https://github.com/ljharb/side-channel-map#readme |
+| side-channel-weakmap | 1.0.2 | MIT | https://github.com/ljharb/side-channel-weakmap#readme |
+| space-separated-tokens | 2.0.2 | MIT | https://github.com/wooorm/space-separated-tokens#readme |
+| standardwebhooks | 1.1.1 | MIT | https://github.com/standard-webhooks/standard-webhooks/tree/main/libraries/javascript |
+| statuses | 2.0.2 | MIT | https://github.com/jshttp/statuses#readme |
+| stringify-entities | 4.0.4 | MIT | https://github.com/wooorm/stringify-entities#readme |
+| style-to-js | 1.1.21 | MIT | https://github.com/remarkablemark/style-to-js#readme |
+| style-to-object | 1.0.14 | MIT | https://github.com/remarkablemark/style-to-object#readme |
+| tailwind-merge | 3.7.0 | MIT | https://github.com/dcastil/tailwind-merge |
+| tiny-typed-emitter | 2.1.0 | MIT | https://github.com/binier/tiny-typed-emitter#readme |
+| toidentifier | 1.0.1 | MIT | https://github.com/component/toidentifier#readme |
+| trim-lines | 3.0.1 | MIT | https://github.com/wooorm/trim-lines#readme |
+| trough | 2.2.0 | MIT | https://github.com/wooorm/trough#readme |
+| ts-algebra | 2.0.0 | MIT | https://github.com/ThomasAribart/ts-algebra#readme |
+| type-is | 2.1.0 | MIT | https://github.com/jshttp/type-is#readme |
+| unified | 11.0.5 | MIT | https://unifiedjs.com |
+| unist-util-is | 6.0.1 | MIT | https://github.com/syntax-tree/unist-util-is#readme |
+| unist-util-position | 5.0.0 | MIT | https://github.com/syntax-tree/unist-util-position#readme |
+| unist-util-stringify-position | 4.0.0 | MIT | https://github.com/syntax-tree/unist-util-stringify-position#readme |
+| unist-util-visit | 5.1.0 | MIT | https://github.com/syntax-tree/unist-util-visit#readme |
+| unist-util-visit-parents | 6.0.2 | MIT | https://github.com/syntax-tree/unist-util-visit-parents#readme |
+| universalify | 2.0.1 | MIT | https://github.com/RyanZim/universalify#readme |
+| unpipe | 1.0.0 | MIT | https://github.com/stream-utils/unpipe#readme |
+| vary | 1.1.2 | MIT | https://github.com/jshttp/vary#readme |
+| vfile | 6.0.3 | MIT | https://github.com/vfile/vfile#readme |
+| vfile-message | 4.0.3 | MIT | https://github.com/vfile/vfile-message#readme |
+| which | 2.0.2 | ISC | https://github.com/isaacs/node-which#readme |
+| wrappy | 1.0.2 | ISC | https://github.com/npm/wrappy |
+| ws | 8.22.0 | MIT | https://github.com/websockets/ws |
+| zod | 4.6.5 | MIT | https://zod.dev |
+| zod-to-json-schema | 3.25.2 | ISC | https://github.com/StefanTerdell/zod-to-json-schema#readme |
+| zustand | 5.0.15 | MIT | https://github.com/pmndrs/zustand |
+| zwitch | 2.0.4 | MIT | https://github.com/wooorm/zwitch#readme |
+
+## Not permissive (needs Rahul's acknowledgement)
+
+- **@anthropic-ai/claude-agent-sdk 0.3.296** — Proprietary: "© Anthropic PBC. All rights reserved. Use is subject to the Legal Agreements outlined here: https://code.claude.com/docs/en/legal-and-compliance" (package LICENSE); governed by Anthropic Commercial Terms per https://code.claude.com/docs/en/agent-sdk/overview
+
+Everything else is MIT, ISC, BSD-2/3-Clause, Apache-2.0, Python-2.0, Unlicense or BlueOak-1.0.0 (all permissive; attribution via this page and the bundled LICENSE files satisfies them).
+
+## Fonts, icons, images
+- Icons: lucide-react (ISC), listed above.
+- Fonts: system fonts only (SF Pro via macOS). If a web font is added later, add its licence here.
+- App icon: generated for emberyard; all rights reserved by emberyard.

@@ -1,0 +1,21 @@
+    <footer class="border-t border-border py-10">
+      <div class="wrap flex flex-col gap-6 text-sm text-muted-fg">
+        <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+          <p><a class="font-medium text-fg-strong" href="{{ORG_URL}}" rel="noopener">{{ORG}}</a> · {{PRODUCT_NAME}} is built in the open, one macOS app at a time.</p>
+          <nav aria-label="Links" class="flex flex-wrap gap-x-5 gap-y-2">
+            <!--appRepo--><a class="hover:text-fg-strong" href="{{APP_REPO_URL}}" rel="noopener">App repo</a><!--/appRepo-->
+            <a class="hover:text-fg-strong" href="{{RELEASES_REPO_URL}}" rel="noopener">Releases</a>
+            <a class="hover:text-fg-strong" href="{{SITE_REPO_URL}}" rel="noopener">This site</a>
+            <a class="hover:text-fg-strong" href="{{ISSUES_URL}}" rel="noopener">Contact: GitHub issues</a>
+          </nav>
+        </div>
+        <div class="flex flex-col gap-3 border-t border-border pt-6 sm:flex-row sm:items-start sm:justify-between">
+          <p class="max-w-2xl text-subtle-fg">{{LEGAL_NOTE}}</p>
+          <nav aria-label="Legal" class="flex flex-wrap gap-x-5 gap-y-2">
+            <a class="hover:text-fg-strong" href="{{HOME}}legal/terms/">Terms</a>
+            <a class="hover:text-fg-strong" href="{{HOME}}legal/privacy/">Privacy</a>
+            <a class="hover:text-fg-strong" href="{{HOME}}legal/third-party-notices/">Third-party notices</a>
+          </nav>
+        </div>
+      </div>
+    </footer>

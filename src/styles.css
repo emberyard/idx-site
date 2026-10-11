@@ -242,6 +242,26 @@
   .nav-link { color: var(--idx-muted-foreground); font-size: 0.875rem; padding: 0.375rem 0.625rem; border-radius: var(--radius-control); }
   .nav-link:hover { color: var(--idx-foreground-strong); background: var(--idx-hover); }
 
+  /* Legal pages, rendered from Markdown. */
+  .legal { line-height: 1.65; color: var(--idx-muted-foreground); }
+  .legal h1 { font-size: 2rem; line-height: 1.15; font-weight: 600; color: var(--idx-foreground-strong); }
+  .legal h2 { margin-top: 2rem; font-size: 1.25rem; font-weight: 600; color: var(--idx-foreground-strong); }
+  .legal h3 { margin-top: 1.5rem; font-size: 1rem; font-weight: 600; color: var(--idx-foreground-strong); }
+  .legal p, .legal ul, .legal ol { margin-top: 0.75rem; }
+  .legal ul { padding-left: 1.25rem; list-style: disc; }
+  .legal ol { padding-left: 1.25rem; list-style: decimal; }
+  .legal li + li { margin-top: 0.25rem; }
+  .legal a { color: var(--idx-foreground-strong); text-decoration: underline; text-underline-offset: 0.15em; text-decoration-color: var(--idx-border); overflow-wrap: anywhere; }
+  .legal a:hover { text-decoration-color: currentColor; }
+  .legal em { color: var(--idx-subtle-foreground); font-style: normal; }
+  .legal strong { color: var(--idx-foreground-strong); font-weight: 600; }
+  .legal table { margin-top: 1rem; width: 100%; border-collapse: collapse; font-size: 0.875rem; display: block; overflow-x: auto; }
+  .legal th, .legal td { text-align: left; vertical-align: top; padding: 0.5rem 0.75rem; border: 1px solid var(--idx-border); }
+  .legal th { color: var(--idx-foreground-strong); background: var(--idx-card); font-weight: 600; }
+  .legal code { white-space: nowrap; }
+  .legal td, .legal th { min-width: 8rem; }
+  .legal td a { overflow-wrap: normal; white-space: nowrap; }
+
   .faq summary { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 1rem 0; font-weight: 500; color: var(--idx-foreground-strong); }
   .faq summary::after {
     content: "+"; flex: none; width: 1.5rem; height: 1.5rem; display: grid; place-items: center;

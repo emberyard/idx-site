@@ -19,9 +19,13 @@ export const site = {
   ORG_URL: 'https://github.com/emberyard',
   DATA_DIR: '~/Library/Application Support/IDX',
   CLAUDE_DIR: '~/.claude/projects',
-  TAGLINE: 'Claude Code, as a Mac app.',
+  TAGLINE: 'A Mac cockpit for Claude Code.',
   DESCRIPTION:
-    'A macOS cockpit over the real Claude Code CLI. Your own login, one window per project, every session back after a restart.',
+    'Bring your own Claude Code. IDX runs the Claude Code you already installed and signed in to, one window per project, every session back after a restart.',
+  /** Contact is GitHub issues; nothing is bought (no domain, no mailbox). */
+  ISSUES_URL: 'https://github.com/emberyard/idx-site/issues',
+  LEGAL_NOTE:
+    'IDX is an independent project, not affiliated with or endorsed by Anthropic or Google. Claude is a trademark of Anthropic PBC; Gemini is a trademark of Google LLC.',
 } as const;
 
 export type SiteKey = keyof typeof site;
