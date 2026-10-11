@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{PRODUCT_NAME}} — {{TAGLINE}}</title>
+    <meta name="description" content="{{DESCRIPTION}}" />
+    <link rel="canonical" href="{{SITE_URL}}" />
+    <link rel="icon" href="{{BASE}}favicon.svg" type="image/svg+xml" />
+    <meta name="theme-color" content="#1f1e1c" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#f8f7f4" media="(prefers-color-scheme: light)" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="{{PRODUCT_NAME}}" />
+    <meta property="og:title" content="{{PRODUCT_NAME}} — {{TAGLINE}}" />
+    <meta property="og:description" content="{{DESCRIPTION}}" />
+    <meta property="og:url" content="{{SITE_URL}}" />
+    <meta property="og:image" content="{{SITE_URL}}og.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="{{PRODUCT_NAME}}: a chat window over Claude Code with a diff, a terminal and a permission card." />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="{{PRODUCT_NAME}} — {{TAGLINE}}" />
+    <meta name="twitter:description" content="{{DESCRIPTION}}" />
+    <meta name="twitter:image" content="{{SITE_URL}}og.jpg" />
+    <script>
+      // Before first paint: honour a stored choice, else the OS. main.ts takes over after load.
+      (function () {
+        try {
+          var t = localStorage.getItem('idx-site.theme');
+          if (t !== 'light' && t !== 'dark') t = matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+          document.documentElement.setAttribute('data-theme', t);
+        } catch (e) {}
+      })();
+    </script>
+    <script type="module" src="/src/main.ts"></script>
+  </head>
+  <body class="bg-bg text-fg">
+    <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-50 btn btn-primary">Skip to content</a>
+
+    <header class="sticky top-0 z-40 border-b border-border bg-bg/85 backdrop-blur">
+      <div class="wrap flex h-14 items-center gap-3">
+        <a href="#top" class="flex items-center gap-2 font-semibold text-fg-strong" aria-label="{{PRODUCT_NAME}} home">
+          <img src="{{BASE}}favicon.svg" alt="" width="24" height="24" class="rounded-md" />
+          {{PRODUCT_NAME}}
+        </a>
+        <nav id="menu" aria-label="Sections" hidden
+          class="absolute inset-x-0 top-14 flex flex-col gap-1 border-b border-border bg-bg p-3 md:static md:ml-4 md:flex md:flex-row md:gap-0 md:border-0 md:bg-transparent md:p-0 md:[&[hidden]]:flex">
+          <a class="nav-link" href="#why">Why</a>
+          <a class="nav-link" href="#features">Features</a>
+          <a class="nav-link" href="#keyboard">Keyboard</a>
+          <a class="nav-link" href="#privacy">Privacy</a>
+          <a class="nav-link" href="#faq">FAQ</a>
+        </nav>
+        <div class="ml-auto flex items-center gap-1">
+          <a class="nav-link hidden sm:inline-flex" href="{{APP_REPO_URL}}" rel="noopener">GitHub</a>
+          <button id="theme-toggle" type="button" class="nav-link inline-grid h-9 w-9 place-items-center" aria-label="Switch theme" aria-pressed="false">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="4" /><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" />
+            </svg>
+          </button>
+          <a class="btn btn-primary hidden h-9 px-3.5 text-sm sm:inline-flex" href="{{DOWNLOAD_URL}}" rel="noopener">Download</a>
+          <button id="menu-toggle" type="button" class="nav-link inline-grid h-9 w-9 place-items-center md:hidden" aria-label="Open menu" aria-controls="menu" aria-expanded="false">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" /></svg>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main id="main">
+      <!-- Hero -->
+      <section id="top" class="relative overflow-hidden pt-16 pb-10 sm:pt-24 sm:pb-16">
+        <div class="hero-glow" aria-hidden="true"></div>
+        <div class="wrap relative">
+          <div class="mx-auto max-w-3xl text-center">
+            <p class="eyebrow">macOS · Apple Silicon · early build</p>
+            <h1 class="mt-4 text-4xl font-semibold leading-[1.05] sm:text-6xl">{{TAGLINE}}</h1>
+            <p class="mx-auto mt-5 max-w-2xl text-lg text-muted-fg sm:text-xl">
+              {{PRODUCT_NAME}} is a cockpit over the real Claude Code CLI. Your own login, one window per project,
+              every session back after a restart.
+            </p>
+            <div class="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
+              <a class="btn btn-primary w-full sm:w-auto" href="{{DOWNLOAD_URL}}" rel="noopener">Download for macOS</a>
+              <a class="btn btn-secondary w-full sm:w-auto" href="{{DOCS_URL}}" rel="noopener">Read the docs</a>
+            </div>
+            <p class="mt-3 text-sm text-subtle-fg">Unsigned local build today. Signed releases soon.</p>
+          </div>
+
+          <div class="frame grain mx-auto mt-12 max-w-5xl sm:mt-16">
+            <!--video-->
+            <video controls playsinline muted preload="metadata" width="1600" height="1000"
+              {{POSTER_ATTR}}
+              aria-label="{{PRODUCT_NAME}} intro video">
+              <!--webm--><source src="{{BASE}}video/intro.webm" type="video/webm" /><!--/webm-->
+              <source src="{{BASE}}video/intro.mp4" type="video/mp4" />
+            </video>
+            <!--/video-->
+            <!--novideo-->
+            <img src="{{BASE}}img/panels-dark.webp" data-dark="{{BASE}}img/panels-dark.webp" data-light="{{BASE}}img/panels-light.webp"
+              width="1600" height="1000" fetchpriority="high" decoding="async"
+              alt="{{PRODUCT_NAME}} window: a chat with Claude Code on the left showing a code block, a two-file diff and a permission card; a terminal open in the right panel." />
+            <p class="absolute right-3 bottom-3 rounded-full border border-border bg-bg/85 px-3 py-1 text-xs text-muted-fg backdrop-blur">Intro video coming soon</p>
+            <!--/novideo-->
+          </div>
+        </div>
+      </section>
+
+      <!-- Why -->
+      <section id="why" class="py-16 sm:py-24">
+        <div class="wrap">
+          <h2 class="text-2xl font-semibold sm:text-3xl">Why another window over Claude Code</h2>
+          <div class="mt-8 grid gap-4 sm:mt-10 sm:grid-cols-3">
+            <div class="rounded-2xl border border-border bg-card p-6">
+              <h3 class="text-base font-semibold">The real CLI, not a copy</h3>
+              <p class="mt-2 text-muted-fg leading-relaxed">Every message goes through the Claude Code you already have installed. Same login, same plan, same slash commands. No API key.</p>
+            </div>
+            <div class="rounded-2xl border border-border bg-card p-6">
+              <h3 class="text-base font-semibold">The project is the axis</h3>
+              <p class="mt-2 text-muted-fg leading-relaxed">Each project is a tab, or its own window. Switch project and the sessions, browser, files and layout switch with it.</p>
+            </div>
+            <div class="rounded-2xl border border-border bg-card p-6">
+              <h3 class="text-base font-semibold">Nothing is lost on restart</h3>
+              <p class="mt-2 text-muted-fg leading-relaxed">Sessions resume on launch. A small host process outlives the windows, so closing one costs you nothing.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Features -->
+      <section id="features" class="border-t border-border py-16 sm:py-24">
+        <div class="wrap flex flex-col gap-20 sm:gap-28">
+
+          <article class="grid items-center gap-8 lg:grid-cols-2 lg:gap-14">
+            <div>
+              <p class="eyebrow">01 · Chat</p>
+              <h2 class="mt-3 text-2xl font-semibold sm:text-3xl">A chat over the real Claude Code</h2>
+              <p class="mt-4 text-muted-fg leading-relaxed">Type, send, read. Code blocks, a diff per turn, drag-in screenshots, <code>@</code> for files, <code>/</code> for commands. The session ids are Claude Code's own, so <code>claude --resume</code> in a terminal picks up where the chat left off.</p>
+            </div>
+            <div class="frame">
+              <img src="{{BASE}}img/chat-dark.webp" data-dark="{{BASE}}img/chat-dark.webp" data-light="{{BASE}}img/chat-light.webp" width="1600" height="1000" loading="lazy" decoding="async"
+                alt="A finished turn in {{PRODUCT_NAME}}: a short answer, a TypeScript code block with a copy button, three notes, and the message box below." />
+            </div>
+          </article>
+
+          <article class="grid items-center gap-8 lg:grid-cols-2 lg:gap-14">
+            <div class="lg:order-2">
+              <p class="eyebrow">02 · Sandboxes</p>
+              <h2 class="mt-3 text-2xl font-semibold sm:text-3xl">Most prompts are throwaway. Treat them that way.</h2>
+              <p class="mt-4 text-muted-fg leading-relaxed"><kbd>⌘N</kbd> starts a new chat in a sandbox folder, no setup. Keep it, promote it to a real folder when it turns into something, or let it archive itself after two idle weeks.</p>
+            </div>
+            <div class="frame lg:order-1">
+              <img src="{{BASE}}img/home-dark.webp" data-dark="{{BASE}}img/home-dark.webp" data-light="{{BASE}}img/home-light.webp" width="1600" height="1000" loading="lazy" decoding="async"
+                alt="The {{PRODUCT_NAME}} Home screen: a centred message box under the line 'What are we building?', with a list of recent sessions across projects and sandboxes." />
+            </div>
+          </article>
+
+          <article class="grid items-center gap-8 lg:grid-cols-2 lg:gap-14">
+            <div>
+              <p class="eyebrow">03 · Projects</p>
+              <h2 class="mt-3 text-2xl font-semibold sm:text-3xl">Projects in windows, across displays</h2>
+              <p class="mt-4 text-muted-fg leading-relaxed">Every window carries a strip of projects. Drag a tab out to put a project on its own display; drop it on another window's strip to move it. Windows, bounds and layouts are restored on launch.</p>
+            </div>
+            <div class="frame">
+              <img src="{{BASE}}img/projects-dark.webp" data-dark="{{BASE}}img/projects-dark.webp" data-light="{{BASE}}img/projects-light.webp" width="1600" height="950" loading="lazy" decoding="async"
+                alt="The project strip with four project tabs and a context menu open: Rename, Reveal in Finder, Open in editor, Open terminal here, Promote to folder, Move to new window, Archive." />
+            </div>
+          </article>
+
+          <article class="grid items-center gap-8 lg:grid-cols-2 lg:gap-14">
+            <div class="lg:order-2">
+              <p class="eyebrow">04 · Permissions</p>
+              <h2 class="mt-3 text-2xl font-semibold sm:text-3xl">All six permission modes, Bypass included</h2>
+              <p class="mt-4 text-muted-fg leading-relaxed">Ask first, Accept edits, Auto, Don't ask, Plan only, Bypass. Set per session from the message box, shown on the session row. Bypass is marked red and confirms once per project.</p>
+            </div>
+            <div class="frame lg:order-1">
+              <img src="{{BASE}}img/modes-dark.webp" data-dark="{{BASE}}img/modes-dark.webp" data-light="{{BASE}}img/modes-light.webp" width="1600" height="950" loading="lazy" decoding="async"
+                alt="A session running in Bypass mode: the mode chip in the message box is red, and the sidebar groups sessions into Waiting on you, Needs you, Working and Idle with each one's mode under its name." />
+            </div>
+          </article>
+
+          <article class="grid items-center gap-8 lg:grid-cols-2 lg:gap-14">
+            <div>
+              <p class="eyebrow">05 · Panels</p>
+              <h2 class="mt-3 text-2xl font-semibold sm:text-3xl">Files, browser, diff and terminal, one panel</h2>
+              <p class="mt-4 text-muted-fg leading-relaxed"><kbd>⌘J</kbd> opens the right panel: a file tree with preview, the diff of what the last turn changed, a browser with its own cookies per project, and a real terminal in the project folder.</p>
+            </div>
+            <div class="frame">
+              <img src="{{BASE}}img/browser-dark.webp" data-dark="{{BASE}}img/browser-dark.webp" data-light="{{BASE}}img/browser-light.webp" width="1600" height="950" loading="lazy" decoding="async"
+                alt="The right panel open on the Browser tab, next to a running chat. Tabs read Files, Browser, Diff, Terminal; the address bar shows localhost:3000." />
+            </div>
+          </article>
+
+          <article class="grid items-center gap-8 lg:grid-cols-2 lg:gap-14">
+            <div class="lg:order-2">
+              <p class="eyebrow">06 · Attention</p>
+              <h2 class="mt-3 text-2xl font-semibold sm:text-3xl">Nothing waits on you silently</h2>
+              <p class="mt-4 text-muted-fg leading-relaxed">A session that needs an answer rises to the top of the sidebar and counts on the Dock badge. Answer a permission with <kbd>1</kbd>, <kbd>2</kbd> or <kbd>3</kbd>. <kbd>⌘⇧U</kbd> jumps to the next one waiting.</p>
+            </div>
+            <div class="frame lg:order-1">
+              <img src="{{BASE}}img/needs-you-dark.webp" data-dark="{{BASE}}img/needs-you-dark.webp" data-light="{{BASE}}img/needs-you-light.webp" width="1600" height="1000" loading="lazy" decoding="async"
+                alt="A permission card in the chat asking 'Allow Bash?' with the command shown, and three buttons: Allow once (1), Always allow (2), Deny (3)." />
+            </div>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- Keyboard -->
+      <section id="keyboard" class="border-t border-border py-16 sm:py-24">
+        <div class="wrap grid gap-10 lg:grid-cols-[1fr_1.2fr] lg:gap-16">
+          <div>
+            <p class="eyebrow">Keyboard-first</p>
+            <h2 class="mt-3 text-2xl font-semibold sm:text-3xl">One shortcut table. Every key is in it.</h2>
+            <p class="mt-4 text-muted-fg leading-relaxed">The app, the menus and Settings all read the same list, so a shortcut you see in a tooltip is the one that works. The full table lives in Settings → Shortcuts.</p>
+          </div>
+          <dl class="divide-y divide-border rounded-2xl border border-border bg-card">
+            <div class="flex items-center justify-between gap-4 px-5 py-3"><dt class="text-fg">Command palette</dt><dd class="flex gap-1"><kbd>⌘</kbd><kbd>K</kbd></dd></div>
+            <div class="flex items-center justify-between gap-4 px-5 py-3"><dt class="text-fg">New chat</dt><dd class="flex gap-1"><kbd>⌘</kbd><kbd>N</kbd></dd></div>
+            <div class="flex items-center justify-between gap-4 px-5 py-3"><dt class="text-fg">New session</dt><dd class="flex gap-1"><kbd>⌘</kbd><kbd>T</kbd></dd></div>
+            <div class="flex items-center justify-between gap-4 px-5 py-3"><dt class="text-fg">Open project folder</dt><dd class="flex gap-1"><kbd>⌘</kbd><kbd>O</kbd></dd></div>
+            <div class="flex items-center justify-between gap-4 px-5 py-3"><dt class="text-fg">Toggle sidebar</dt><dd class="flex gap-1"><kbd>⌘</kbd><kbd>B</kbd></dd></div>
+            <div class="flex items-center justify-between gap-4 px-5 py-3"><dt class="text-fg">Toggle right panel</dt><dd class="flex gap-1"><kbd>⌘</kbd><kbd>J</kbd></dd></div>
+            <div class="flex items-center justify-between gap-4 px-5 py-3"><dt class="text-fg">Stop the running turn</dt><dd class="flex gap-1"><kbd>⌘</kbd><kbd>.</kbd></dd></div>
+            <div class="flex items-center justify-between gap-4 px-5 py-3"><dt class="text-fg">Next session waiting on you</dt><dd class="flex gap-1"><kbd>⌘</kbd><kbd>⇧</kbd><kbd>U</kbd></dd></div>
+          </dl>
+        </div>
+      </section>
+
+      <!-- Privacy -->
+      <section id="privacy" class="border-t border-border py-16 sm:py-24">
+        <div class="wrap">
+          <div class="rounded-3xl bg-well p-6 text-well-fg sm:p-10 lg:p-14">
+            <p class="eyebrow">Privacy</p>
+            <h2 class="mt-3 text-2xl font-semibold text-white sm:text-3xl">Runs on your Mac, with your login</h2>
+            <div class="mt-6 grid gap-6 text-well-muted leading-relaxed lg:grid-cols-2 lg:gap-10">
+              <p>{{PRODUCT_NAME}} talks to Claude only through the Claude Code CLI on your machine, signed in to your own Claude account. There is no API key to paste, no {{PRODUCT_NAME}} account, and no server in between.</p>
+              <p>Projects, sessions, windows and settings live in one SQLite file under <code class="border-well-border bg-white/5 text-white">{{DATA_DIR}}</code>. Transcripts stay where Claude Code keeps them, in <code class="border-well-border bg-white/5 text-white">{{CLAUDE_DIR}}</code>. Delete the folder and {{PRODUCT_NAME}} forgets everything. This page has no analytics either.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Download -->
+      <section id="download" class="border-t border-border py-16 sm:py-24">
+        <div class="wrap">
+          <div class="mx-auto max-w-2xl text-center">
+            <h2 class="text-2xl font-semibold sm:text-3xl">Get {{PRODUCT_NAME}}</h2>
+            <p class="mt-4 text-muted-fg leading-relaxed">macOS on Apple Silicon. You need Claude Code installed and signed in once in a terminal; {{PRODUCT_NAME}} uses that.</p>
+            <div class="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
+              <a class="btn btn-primary w-full sm:w-auto" href="{{DOWNLOAD_URL}}" rel="noopener">Download for macOS</a>
+              <a class="btn btn-secondary w-full sm:w-auto" href="{{RELEASES_REPO_URL}}" rel="noopener">All releases</a>
+            </div>
+            <div class="mt-8 rounded-xl border border-warning-border bg-warning-surface p-4 text-left text-sm leading-relaxed">
+              <p class="font-medium text-warning-fg">Honest note on today's build</p>
+              <p class="mt-1 text-muted-fg">It is built locally and not yet signed, so macOS will warn on first open: right-click the app and choose Open. Signed, notarised releases with auto-update are next, and they will land at the same link.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section id="faq" class="border-t border-border py-16 sm:py-24">
+        <div class="wrap grid gap-10 lg:grid-cols-[1fr_1.6fr] lg:gap-16">
+          <div>
+            <p class="eyebrow">FAQ</p>
+            <h2 class="mt-3 text-2xl font-semibold sm:text-3xl">Short answers</h2>
+          </div>
+          <div class="faq">
+            <details>
+              <summary>Does it run on Windows or Linux?</summary>
+              <div>No. macOS on Apple Silicon only, today. Nothing else is planned for the first version.</div>
+            </details>
+            <details>
+              <summary>Do I need an API key?</summary>
+              <div>No. {{PRODUCT_NAME}} drives the Claude Code CLI already on your Mac, signed in with your Claude account (Pro or Max). Install Claude Code, run <code>claude</code> once in a terminal to log in, and {{PRODUCT_NAME}} takes it from there.</div>
+            </details>
+            <details>
+              <summary>What about Gemini?</summary>
+              <div>Gemini runs through the Antigravity CLI (<code>agy</code>) or the <code>gemini</code> CLI, in a terminal-backed session with its own login. Chat rendering for Gemini comes after Claude's.</div>
+            </details>
+            <details>
+              <summary>Do I need an account?</summary>
+              <div>No. There is no {{PRODUCT_NAME}} account, no sign-up and no server. The only login is the one Claude Code already has.</div>
+            </details>
+            <details>
+              <summary>Where does my data live?</summary>
+              <div>In <code>{{DATA_DIR}}</code>: a SQLite database with projects, sessions, windows and settings, plus before/after snapshots of the files each turn touched. Transcripts stay in <code>{{CLAUDE_DIR}}</code>, where Claude Code keeps them.</div>
+            </details>
+            <details>
+              <summary>Why does macOS warn when I open it?</summary>
+              <div>Current builds are local and not signed, so Gatekeeper warns the first time. Right-click the app and choose Open. Signed and notarised releases, with auto-update, are the next step.</div>
+            </details>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="border-t border-border py-10">
+      <div class="wrap flex flex-col gap-4 text-sm text-muted-fg sm:flex-row sm:items-center sm:justify-between">
+        <p><a class="font-medium text-fg-strong" href="{{ORG_URL}}" rel="noopener">{{ORG}}</a> · {{PRODUCT_NAME}} is built in the open, one macOS app at a time.</p>
+        <nav aria-label="Links" class="flex flex-wrap gap-x-5 gap-y-2">
+          <a class="hover:text-fg-strong" href="{{APP_REPO_URL}}" rel="noopener">App repo</a>
+          <a class="hover:text-fg-strong" href="{{RELEASES_REPO_URL}}" rel="noopener">Releases</a>
+          <a class="hover:text-fg-strong" href="{{SITE_REPO_URL}}" rel="noopener">This site</a>
+        </nav>
+      </div>
+    </footer>
+  </body>
+</html>
