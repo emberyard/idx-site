@@ -9,6 +9,9 @@ export const site = {
   /** Where the built site is served. The base path must match `base` in `vite.config.ts`. */
   SITE_URL: 'https://emberyard.github.io/idx-site/',
   DOWNLOAD_URL: 'https://github.com/emberyard/idx-releases/releases',
+  /** The app repo is private until Rahul opens it. While false, "Read the docs" points at the page's own FAQ
+   *  and nothing on the page links to the private repo. Flip to true and rebuild once the repo is public. */
+  DOCS_PUBLIC: false,
   DOCS_URL: 'https://github.com/emberyard/idx#readme',
   APP_REPO_URL: 'https://github.com/emberyard/idx',
   RELEASES_REPO_URL: 'https://github.com/emberyard/idx-releases',

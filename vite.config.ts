@@ -28,10 +28,13 @@ function siteHtml(): Plugin {
       keep('video', hasVideo);
       keep('novideo', !hasVideo);
       keep('webm', hasWebm);
+      keep('appRepo', site.DOCS_PUBLIC);
       return out.replace(/\{\{([A-Z_]+)\}\}/g, (match, key: string) => {
         if (key === 'BASE') return BASE;
+        if (key === 'DOCS_LINK') return site.DOCS_PUBLIC ? site.DOCS_URL : '#faq';
+        if (key === 'GITHUB_LINK') return site.DOCS_PUBLIC ? site.APP_REPO_URL : site.ORG_URL;
         if (key === 'POSTER_ATTR') return hasPoster ? `poster="${BASE}video/poster.jpg"` : '';
-        if (key in site) return site[key as keyof typeof site];
+        if (key in site) return String(site[key as keyof typeof site]);
         throw new Error(`index.html references unknown site constant ${match}`);
       });
     },

@@ -25,7 +25,7 @@ the base path is `/idx-site/` (`base` in `vite.config.ts`).
 
 | Path | What |
 |---|---|
-| `src/site.config.ts` | Every constant: product name, URLs, tagline. `index.html` reads them as `{{KEY}}`. The product name mirrors `PRODUCT_NAME` in the app repo and is spelled out nowhere else. |
+| `src/site.config.ts` | Every constant: product name, URLs, tagline. `index.html` reads them as `{{KEY}}`. The product name mirrors `PRODUCT_NAME` in the app repo and is spelled out nowhere else. `DOCS_PUBLIC` is `false` while the app repo is private: "Read the docs" then points at `#faq`, the GitHub link at the org page, and the footer drops the app-repo link. Flip it and push once the repo is public. |
 | `src/styles.css` | IDX design tokens (OKLCH, from the app's `packages/tokens`) as CSS variables, mapped into Tailwind. Dark by default; light via `prefers-color-scheme` or the toggle (`data-theme`). |
 | `index.html` | The page. |
 | `src/main.ts` | Theme toggle (swaps the dark/light screenshots too) and the mobile menu. |
