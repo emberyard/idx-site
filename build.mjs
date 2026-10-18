@@ -117,5 +117,6 @@ for (const [from, to] of REDIRECTS) {
 }
 writeFileSync(join(out, 'robots.txt'), cfg.flags.indexable ? `User-agent: *\nAllow: /\nSitemap: ${abs('sitemap.xml')}\n` : '# Draft preview: not for search engines yet.\nUser-agent: *\nDisallow: /\n');
 writeFileSync(join(out, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${all.filter((p) => p.path !== '404.html').map((p) => `  <url><loc>${abs(p.path)}</loc></url>`).join('\n')}\n</urlset>\n`);
+mkdirSync(join(root, '_work'), { recursive: true });
 writeFileSync(join(root, '_work', 'pages.json'), JSON.stringify(all.map((p) => ({ path: p.path, title: p.title })), null, 1));
 console.log(`built ${all.length - 1} pages + 404 to ${out} (base ${base}, origin ${c.origin})`);
