@@ -1,0 +1,14 @@
+{
+ "who-its-for": {
+  "title": "Who it is for",
+  "description": "The daily frictions of running AI coding agents on many projects, and who IDX is for.",
+  "og": "who",
+  "path": "who-its-for/"
+ },
+ "legal-third-party-notices": {
+  "title": "Third-party notices",
+  "description": "Third-party notices for IDX, a private-beta Mac app for Claude Code and Gemini CLI. Draft text, pending review.",
+  "og": "default",
+  "path": "legal/third-party-notices/"
+ }
+}

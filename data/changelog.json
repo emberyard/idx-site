@@ -1,0 +1,572 @@
+{
+ "source": "packages/protocol/src/changelog.ts",
+ "entries": [
+  {
+   "version": "0.1.28",
+   "date": "2026-10-18",
+   "headlines": [
+    "New chats start the way you left them: view, permission mode, model and effort.",
+    "What's new: you will always see what changed after an update."
+   ],
+   "new": [
+    "What's new: after an update a quiet card tells you what changed. Help > What's New and Settings > About list every version.",
+    "The update button now shows the top one or two changes before you restart.",
+    "New chats start in the permission mode, model and effort you last used in that project, separately for Claude and Gemini.",
+    "Settings > Trust & permissions: Start new chats in the mode I used last, with an off switch."
+   ],
+   "improved": [
+    "Chats come back after a restart in the view you left them in, Chat or Terminal.",
+    "A chat in Bypass is always named in the sidebar and the mode button says where the mode came from.",
+    "A Claude chat started in the terminal now begins with your chosen model and effort.",
+    "Bypass used in one project is never carried into a project that has not confirmed it.",
+    "Release notes on GitHub now come from the same list as the in-app What's new."
+   ]
+  },
+  {
+   "version": "0.1.27",
+   "date": "2026-10-18",
+   "headlines": [
+    "New chats can open in Chat or Terminal, whichever you used last in that project.",
+    "A Details panel for sub-agents, and many Terminal upgrades."
+   ],
+   "new": [
+    "Same as last time: a new chat opens in Chat or Terminal, whichever you used last in that project.",
+    "Details panel beside the chat, with a chip for each sub-agent.",
+    "Terminal: find in scrollback, clickable file paths, a Scroll to bottom button, Clear Terminal, a right-click menu and Copy on select (off by default).",
+    "Terminal scrollback setting: 5,000, 20,000 or 50,000 lines, with the memory it uses.",
+    "Terminal text size has its own keys (Control-Command plus, minus and 0)."
+   ],
+   "improved": [
+    "When a plan limit is reached, a calm strip lets you switch account yourself and reminds you at reset. Stopped chats get a Resume button.",
+    "A message blocked by your own hook shows as one row with a count and the hook message to copy.",
+    "Sub-agent steps come back when you import or catch up a chat from the terminal.",
+    "Short messages no longer stretch wide, and repeated output lines fold into one.",
+    "Files and Diff lists, and long Settings lists, fold open and shut the same way everywhere."
+   ]
+  },
+  {
+   "version": "0.1.26",
+   "date": "2026-10-15",
+   "headlines": [
+    "Send now and Redirect while Claude works, plus a Detail level for how much each chat shows.",
+    "Antigravity joins Claude and Gemini, and every account has its own folder."
+   ],
+   "new": [
+    "Chat width: Auto, Narrow, Medium, Wide or Full, one click from the chat header, kept per project and per window.",
+    "Stop chat frees a chat's memory and keeps it in your list. Stopped chats show as an outline.",
+    "Send now (Ctrl+Enter) and Redirect while Claude is working. You can also write while an approval or question waits.",
+    "Antigravity (agy) is a choice next to Claude and Gemini. It opens as a terminal you type into, with its own accounts.",
+    "Every account has its own folder, with Reveal in Finder and Copy path. Share my setup lets a new account use your instructions, skills, agents and commands by reference.",
+    "An information panel on every account, and a Connected accounts strip at the top of Settings > Accounts.",
+    "Detail level: Summary, Normal or Everything, in the chat menu, Settings and the command palette.",
+    "Copy from terminals: the whole scrollback, the last lines, the screen or your selection. Also Copy session as Markdown and Save as file.",
+    "Open links in IDX's browser, your default browser, or ask each time. IDX remembers your choice per site.",
+    "Tool server (MCP) questions show as a card you can answer. Settings > Connections shows each server's state with Reconnect and Turn off.",
+    "Thinking effort, Fast mode and Output style pickers, shown only where your model and account support them.",
+    "Plan usage in the message box: 5-hour and weekly limits and reset times.",
+    "Background tasks: Move to background, and the Needs you list says how many are running.",
+    "Sidebar sections: Needs you, This project and Other projects. Drag chats or use Move to top, up and down to set your own order."
+   ],
+   "improved": [
+    "Clearer screens: each fact is shown once and each thing has one name. The status dots have a legend.",
+    "A step that fails opens by itself, and closed rows say what is inside. IDX remembers which ones you opened in each chat.",
+    "Typing in a terminal and the first words of a reply reach the screen sooner.",
+    "Sign in, Check and Diagnose on accounts now work and show what is happening."
+   ],
+   "fixed": [
+    "The Browser panel's buttons no longer run off the edge in a narrow window.",
+    "The Thinking effort picker now appears for models that support it."
+   ]
+  },
+  {
+   "version": "0.1.25",
+   "date": "2026-10-14",
+   "headlines": [
+    "Rewind: go back to any of your prompts and restore the code, the conversation, or both.",
+    "Updates are clearer: Skip this version, and Check for updates always answers."
+   ],
+   "new": [
+    "Rewind to here beside every prompt you sent. Also /rewind, the command palette, or Esc twice in an idle chat.",
+    "A small panel shows the files that would change before anything happens. Restoring only the conversation is the safe default.",
+    "Skip this version for an update you do not want yet."
+   ],
+   "improved": [
+    "If a newer update comes out while one is already downloaded, IDX swaps to the newer one.",
+    "Check for updates always answers: checking, up to date (with the time), downloading with a percentage, or a plain reason with Retry.",
+    "The same update status shows in the sidebar footer, Settings > About and the app menu.",
+    "IDX no longer asks you to restart while your chats are working.",
+    "In a narrow window, choosing a Settings section closes the section list."
+   ]
+  },
+  {
+   "version": "0.1.24",
+   "date": "2026-10-14",
+   "headlines": [
+    "Esc on a running chat now asks first, so a slip never stops your work.",
+    "Pictures you attach or paste now load and enlarge reliably."
+   ],
+   "new": [
+    "Esc on a running chat asks first. Enter stops it, Esc keeps it going. The setting Stop with a single Esc turns the question off.",
+    "A stopped chat shows a quiet Stopped by you line with Continue and Retry last prompt. The work done so far is kept."
+   ],
+   "improved": [
+    "Several Thinking steps in a row fold into one line.",
+    "A tool header shows the first useful line of a script, with Show more for the rest.",
+    "A tool call that failed and was retried shows one quiet line.",
+    "The approaching-your-limit notice shows once, above the message field.",
+    "When a hook has a problem, the line names the hook and says it comes from your own Claude settings.",
+    "Tables scroll sideways instead of squashing their columns."
+   ],
+   "fixed": [
+    "Attached and pasted images no longer show as blank boxes. IDX keeps its own copy of each picture. A picture that cannot load shows Retry and Remove."
+   ]
+  },
+  {
+   "version": "0.1.23",
+   "date": "2026-10-14",
+   "headlines": [
+    "Put up to three live chats of a project side by side.",
+    "A Needs you sheet gathers every waiting question across your columns."
+   ],
+   "new": [
+    "Chat columns: open up to three live chats of one project side by side, with Open in new column in a chat's menu.",
+    "An approvals rail and a Needs you sheet gather every question waiting for you across the columns.",
+    "On wide windows the sidebar shows a short preview under each chat."
+   ],
+   "improved": [
+    "The tab strip keeps its buttons on screen when a project has a long name.",
+    "Shortcut tips appear above the message box instead of covering it.",
+    "The Gemini approval card has clearer wording.",
+    "Open in is a submenu, and the sidebar tip card can be collapsed.",
+    "Panel tabs, chat header chips, the command palette and Settings rows fit better in small windows. Tooltips no longer linger."
+   ]
+  },
+  {
+   "version": "0.1.22",
+   "date": "2026-10-14",
+   "headlines": [
+    "Display size for big screens, with Auto for 4K.",
+    "Mac permissions in one place, with no surprise prompts."
+   ],
+   "new": [
+    "Settings > Trust & permissions > Mac permissions lists what IDX can use, as Recommended, Optional and Never asked, each with its status.",
+    "A first-run permissions walk, and a banner if a permission is switched off later.",
+    "Automation guard (off by default): stops chats from driving other Mac apps through osascript.",
+    "Settings > Appearance > Display size: Auto, Compact, Default, Comfortable, Large or Extra large, with a per-window override."
+   ],
+   "improved": [
+    "No text under 12 px at the default size. Chat and message text is a little larger.",
+    "Muted and secondary text is clearer in light and dark.",
+    "Section headings are firmer and there is more space above each of your prompts.",
+    "IDX is now private and proprietary software instead of Apache-2.0."
+   ]
+  },
+  {
+   "version": "0.1.21",
+   "date": "2026-10-14",
+   "headlines": [
+    "IDX can answer low-risk approvals for you while you are away.",
+    "Every reply ends with the model, tokens and time it took."
+   ],
+   "new": [
+    "Smarter approvals: IDX judges how risky a request is and can answer low-risk ones for you. Questions that wait too long fall back to a safe default.",
+    "Diagnostics > Approvals lists every approval and what was decided.",
+    "Every reply ends with a footer: the model, the tokens used and how long it took.",
+    "A models-used-in-this-chat panel."
+   ],
+   "improved": [
+    "Switching models shows one clear Switched to line instead of a pile of them.",
+    "Sandboxes are never cleaned up automatically. You can still pick a clean-up period in Settings.",
+    "Tidying up empty chats runs once to clear leftovers from earlier versions, then only if you turn it on."
+   ]
+  },
+  {
+   "version": "0.1.20",
+   "date": "2026-10-14",
+   "headlines": [
+    "One project per window, and a quick switcher: press Command-P to jump anywhere.",
+    "Archived chats now have a page you can find."
+   ],
+   "new": [
+    "One project, one window: lock a window to its project, send a project to another window with Move to Window, and pull it back with Bring Here. A Window menu lists your windows.",
+    "Archived chats have their own page in the sidebar and can be restored in place. After you archive, a message tells you where it went.",
+    "Command-P jumps to any project or chat. Control-Tab cycles through them.",
+    "Redraw terminal repaints a terminal that looks garbled."
+   ],
+   "improved": [
+    "The header shows the project name in its accent colour.",
+    "Chat titles are short and clean, and a name you set yourself always wins.",
+    "Started chats keep their own model. Empty chats left over from earlier versions are archived.",
+    "Shortcut tips adapt: after you click an action a few times, IDX shows its shortcut once, then stops."
+   ],
+   "fixed": [
+    "Long names and narrow windows no longer overflow or overlap."
+   ]
+  },
+  {
+   "version": "0.1.19",
+   "date": "2026-10-14",
+   "headlines": [
+    "A new chat stays a draft until you send the first message.",
+    "Trust levels per project, and a shortcuts guide."
+   ],
+   "new": [
+    "Trust levels per project, pre-trusting a folder, an always-allow list, a macOS permissions guide and a terminal hand-off mode.",
+    "A shortcuts guide, key hints next to actions and a once-a-day tip.",
+    "A new chat stays a draft until you send the first message.",
+    "Phone access is off by default. Turn it on per chat with Continue on phone."
+   ],
+   "improved": [
+    "How many chats can run at once now follows your Mac's real memory, and idle chats stop on their own in Automatic mode.",
+    "Low-memory warnings only appear when memory is genuinely low.",
+    "The model shown on a chat is the model that actually answered."
+   ],
+   "fixed": [
+    "Menus open next to the button you clicked, including the chat menu mid-chat."
+   ]
+  },
+  {
+   "version": "0.1.18",
+   "date": "2026-10-14",
+   "headlines": [
+    "Right-click the Dock icon to see chats waiting for you.",
+    "Idle chats free their memory, with nothing left running after you quit."
+   ],
+   "new": [
+    "Dock menu: chats waiting for you, pinned and recent projects, and quick actions. Window titles are now meaningful."
+   ],
+   "improved": [
+    "Sidebar chat names are meaningful, and screenshot names read properly.",
+    "Idle chats stop and free memory, and there are no leftover processes after you quit.",
+    "No dollar amounts are shown on Max plans."
+   ],
+   "fixed": [
+    "/compact no longer shows raw text in the transcript, and hook noise is hidden."
+   ]
+  },
+  {
+   "version": "0.1.17",
+   "date": "2026-10-14",
+   "headlines": [
+    "Links and files open beside the chat.",
+    "Each reply shows which model answered it."
+   ],
+   "new": [
+    "Gemini 4 Argon is built in, tagged Early.",
+    "Links in chat open beside the chat and can be copied. Files mentioned in a chat open there too.",
+    "Files Claude sends show as previews in the chat.",
+    "Each reply shows which model answered it, and a Switched to line appears when the model or account changes."
+   ],
+   "improved": [
+    "Gemini thinking is readable, with proper formatting.",
+    "The Gemini chat header shows the model and the account."
+   ]
+  },
+  {
+   "version": "0.1.16",
+   "date": "2026-10-14",
+   "headlines": [
+    "Sandboxes are full projects you can keep, and Claude in a terminal is a first-class choice.",
+    "Reopening IDX brings back every window, tab and terminal."
+   ],
+   "new": [
+    "New sandbox (Control-Command-N) opens an empty, git-ready project in its own tab. Keep moves it to a folder you pick, with all its chats. Discard sends it to the Archive.",
+    "An All chats page lists your chats from every project.",
+    "Start any chat in the Claude terminal with Option-Command-T, or flip a chat with the Chat | Terminal switch.",
+    "Add projects straight from a previous tool, read-only, in one step."
+   ],
+   "improved": [
+    "A chat only asks for you when Claude really needs an answer. Terminal bells and idle prompts no longer set it off.",
+    "Fast, exact restore: every window on its display at its size, every tab and the shell scrollback. Only the chats in front start; the rest resume when you open them.",
+    "The place menu is one menu everywhere."
+   ]
+  },
+  {
+   "version": "0.1.15",
+   "date": "2026-10-13",
+   "headlines": [
+    "Checked against Gemini CLI 0.64.0."
+   ],
+   "improved": [
+    "Everything IDX uses was checked against Gemini CLI 0.64.0: chats, model and mode lists, approvals, file edits and finished replies.",
+    "Settings > Diagnostics notes when your Gemini CLI is newer than the versions IDX was checked with."
+   ],
+   "fixed": [
+    "A Gemini chat you continued in the terminal now reads back correctly after Gemini shortens a long conversation. Earlier turns could show up twice."
+   ]
+  },
+  {
+   "version": "0.1.14",
+   "date": "2026-10-13",
+   "headlines": [
+    "Command-W now closes what you are working in, like a browser.",
+    "Command-Shift-T brings back what you just closed."
+   ],
+   "new": [
+    "Command-W closes whatever has focus: a Browser or Terminal tab, the Files or Diff panel, the terminal drawer, or the chat in front. Nothing is deleted, and Command-Shift-T brings it back.",
+    "Closing a terminal tab that is still running something asks first."
+   ],
+   "improved": [
+    "A Claude chat that has finished replying shows as done, even if its reply ends with a question. Waiting means a real question, permission or plan approval.",
+    "New chat in this project, for a project open in another window, starts the chat in that window with your cursor in the message box.",
+    "Closing a pop-out window from the keyboard puts its chat back in the project window."
+   ]
+  },
+  {
+   "version": "0.1.13",
+   "date": "2026-10-13",
+   "headlines": [
+    "IDX opens about a second sooner.",
+    "Gemini models have clear names, and you can type a model it does not list yet."
+   ],
+   "new": [
+    "Drag a folder onto the sidebar or Home to add a project. After adding a folder or starting a chat, your cursor is already in the message box.",
+    "Many project tabs: an N more menu lists the tabs that do not fit.",
+    "Type a Gemini model id the CLI does not list yet. After you use it once, it stays in the menu for that account."
+   ],
+   "improved": [
+    "IDX no longer waits for your shell settings before showing the window. Chats and terminals still get your full setup.",
+    "Gemini model names are clear, with the most capable first.",
+    "In a new chat, the model and mode menus show the chosen agent's real choices before you send anything.",
+    "Once a chat has started, the account chip shows the account's name.",
+    "The browser start page has a single address bar."
+   ],
+   "fixed": [
+    "A Gemini chat that finished replying shows as done, not waiting.",
+    "Archiving a project from its own window closes that window."
+   ]
+  },
+  {
+   "version": "0.1.12",
+   "date": "2026-10-13",
+   "headlines": [
+    "A chat you pop out into its own window now stays on that chat."
+   ],
+   "fixed": [
+    "Moving or resizing a popped-out chat window, or relaunching, could switch it to the Home screen. It now keeps showing the chat and its message box.",
+    "This works the same for project chats, quick chats, and chats popped out of a project's own window."
+   ]
+  },
+  {
+   "version": "0.1.11",
+   "date": "2026-10-13",
+   "headlines": [
+    "Nothing gets cut off in a small window any more."
+   ],
+   "improved": [
+    "Menus always fit inside the window, wrap long descriptions and never open under the window buttons.",
+    "Dialogs fit a short window and scroll inside.",
+    "Project tabs no longer overlap each other or the plus button. The strip scrolls and keeps your tab in view.",
+    "Usage bars line up across accounts, turn amber from 80% and red from 95%.",
+    "Custom endpoint choices are clear segmented buttons.",
+    "A list filtered to nothing says so. The sidebar fades out under Home and New chat when scrolled.",
+    "A chat continuing in the terminal shows a small terminal icon in the sidebar.",
+    "Settings opens full width. The Send button looks clearly off when there is nothing to send."
+   ],
+   "fixed": [
+    "Report an Issue no longer includes log lines written by earlier versions."
+   ]
+  },
+  {
+   "version": "0.1.10",
+   "date": "2026-10-13",
+   "headlines": [
+    "Small fixes to account usage."
+   ],
+   "fixed": [
+    "Settings > Diagnostics > Account usage: each account's name and plan are readable again, with the usage bars beside them.",
+    "The usage heads-up above the message box reads plainly, for example has used 90% of its weekly limit.",
+    "Usage percentages line up better."
+   ]
+  },
+  {
+   "version": "0.1.9",
+   "date": "2026-10-13",
+   "headlines": [
+    "Accounts with plan names, usage meters and custom endpoints.",
+    "The chat and the terminal stay in sync when you switch between them."
+   ],
+   "new": [
+    "Rename any account. Each account shows its plan and email, for example Work - Max.",
+    "Usage meters for each Claude account (5-hour and weekly), and a calm heads-up at 80%.",
+    "Custom endpoint accounts for an AI gateway or local models such as Ollama and LiteLLM.",
+    "Continue a chat in the terminal and the chat waits, so the two never both write. What you do in the terminal appears in the chat, and Return to chat picks up from there.",
+    "If the terminal went in a different direction, the chat shows it as a branch."
+   ],
+   "improved": [
+    "Menus and pop-ups never get cut off at the edge of the window.",
+    "The model picker is one simple list: Auto at the top, then each model with a short note.",
+    "The sidebar no longer jumps around when you click. Pinned projects stay where you put them.",
+    "Hundreds of projects and chats are fine: All projects and Show all chats open a fast, searchable list.",
+    "Opening a project always does the same thing: if it is open in a window, go there; otherwise open it as a tab."
+   ],
+   "fixed": [
+    "A chat no longer fails to open when one of its saved context readings was incomplete.",
+    "Gemini: the first reply after returning from the terminal is no longer lost."
+   ]
+  },
+  {
+   "version": "0.1.8",
+   "date": "2026-10-13",
+   "headlines": [
+    "A Chrome-grade Browser panel, and accounts with their own sign-ins.",
+    "Tabs and terminal scrollback survive a restart."
+   ],
+   "new": [
+    "A Browser panel with dev-server detection, device mode, zoom and pop-out.",
+    "Settings > Accounts: Claude, Gemini and Antigravity accounts, each with its own sign-in.",
+    "Settings > Diagnostics and Report an Issue, which builds a local bundle you can read first. Nothing is uploaded.",
+    "Project-first navigation: a Projects home and a project sidebar.",
+    "Tabs and terminal scrollback survive a relaunch, and nothing re-runs by itself."
+   ],
+   "improved": [
+    "Chats and terminals pick up your full shell setup, including PATH.",
+    "Differential updates verify correctly."
+   ]
+  },
+  {
+   "version": "0.1.7",
+   "date": "2026-10-13",
+   "headlines": [
+    "See what Claude's sub-agents are doing, live.",
+    "IDX works more like the terminal: queued messages, plan approval, readable steps."
+   ],
+   "new": [
+    "Sub-agents show as cards under the reply, live, with their own steps, tokens and a Stop button.",
+    "A Running tray lists background commands and sub-agents, each with Stop.",
+    "A context meter shows how full the conversation is. Compact now compacts it and leaves a marker.",
+    "Open and continue chats you started in a terminal. IDX warns you before both write to the same chat.",
+    "Phone access per chat: share a chat with the Claude app.",
+    "Environment variables per profile.",
+    "Gemini CLI runs in the chat view, for paid, API-key and company plans."
+   ],
+   "improved": [
+    "A message you send while Claude works is queued and folded into the turn.",
+    "Chats start in your Claude Code default mode. Thinking summaries are shown.",
+    "Readable tool steps: commands with output, files read, edits with inline diffs, searches with match counts.",
+    "Proper plan approval, questions answered as choices, and Deny and tell Claude why.",
+    "Ask first now always asks before an edit, even when a plugin hook would have approved it.",
+    "Banners for retries and usage limits. Messages from your hooks show as small rows."
+   ],
+   "fixed": [
+    "The chat no longer gets stuck on Working.",
+    "Claude transcripts are always saved, even when IDX was opened from inside another Claude Code session."
+   ]
+  },
+  {
+   "version": "0.1.6",
+   "date": "2026-10-12",
+   "headlines": [
+    "Closing a tab no longer archives it, and a restart brings everything back.",
+    "A new chat creates nothing until you send."
+   ],
+   "new": [
+    "Archive is separate from closing, with Undo. Command-Shift-T reopens closed tabs, pop-outs and windows.",
+    "Restart brings back your half-typed message in every chat, your scroll position and everything that was open.",
+    "Each chat has its own message box.",
+    "A note appears when two chats work in the same folder."
+   ],
+   "improved": [
+    "Command-N creates nothing until you send. Quick chats get readable folder names.",
+    "Faster and steadier: no jumping while replies stream, and one Claude process per chat.",
+    "A calm, consistent motion style, and clearer wording: chat, project, quick chat, Save as project.",
+    "Open in own window is visible on projects and quick chats."
+   ],
+   "fixed": [
+    "The terminal tab name, diff colours, header alignment, and a waiting chat listed twice."
+   ]
+  },
+  {
+   "version": "0.1.5",
+   "date": "2026-10-12",
+   "headlines": [
+    "A calm new look with no purple.",
+    "Pop a chat, terminal, diff or file out into its own window."
+   ],
+   "new": [
+    "Pop a chat, terminal, diff or file out into its own window (Option-Command-N) and dock it back (Option-Command-B). Pop-outs come back after a restart.",
+    "The model list shows before your first message."
+   ],
+   "improved": [
+    "Calm new look: buttons are off-white in dark and graphite in light, the focus ring is quiet, and plan status is teal.",
+    "Code blocks, diffs and the terminal are light in light mode. Code blocks wrap.",
+    "Your data folder is private to you. A smaller app download.",
+    "A popped-out chat shows its title once, Command-K lists each chat once, and error messages are plain."
+   ]
+  },
+  {
+   "version": "0.1.4",
+   "date": "2026-10-12",
+   "headlines": [
+    "A new app icon, and a quick terminal drawer under the chat.",
+    "Quick chats move to their own list in the sidebar."
+   ],
+   "new": [
+    "Quick terminal drawer under the chat: Control-backtick toggles it, Esc goes to the terminal, Command-L takes you back to the chat.",
+    "Open in lists your installed editors: Cursor, Finder, VS Code, Zed, Xcode.",
+    "Quick chats move to a Chats list in the sidebar. The top strip keeps your folders and pinned chats, with Pin and Unpin in the chat menus.",
+    "A signed and notarized install DMG."
+   ],
+   "improved": [
+    "A new app icon: graphite and warm white, with a matching IDX Dev icon."
+   ]
+  },
+  {
+   "version": "0.1.3",
+   "date": "2026-10-11",
+   "headlines": [
+    "A Restart to update button in the top bar, and chats that survive sleep."
+   ],
+   "new": [
+    "A Restart to update button appears in the top bar when an update is ready. It warns you if chats are still running.",
+    "Settings > Data & privacy with Remove all IDX data, and Help > Uninstall IDX.",
+    "A branded install window when you open the download."
+   ],
+   "improved": [
+    "Your chats and the background service survive your Mac going to sleep.",
+    "Dev builds are fully IDX Dev, with an amber DEV icon, so they never get mixed up with the real app."
+   ]
+  },
+  {
+   "version": "0.1.2",
+   "date": "2026-10-11",
+   "headlines": [
+    "IDX finds Claude Code wherever it is installed."
+   ],
+   "new": [
+    "Set the Claude Code path in Settings > General, and use Detect to find it for you.",
+    "Home shows whether Claude Code is installed and signed in, with a one-click Sign in."
+   ],
+   "improved": [
+    "If Claude Code is missing, your message is never lost, and you get clear buttons to fix it."
+   ]
+  },
+  {
+   "version": "0.1.1",
+   "date": "2026-10-11",
+   "headlines": [
+    "Smart paste, drag-and-drop, slash commands and @ file mentions in the message box."
+   ],
+   "new": [
+    "Message box: smart paste, drag-and-drop, / commands and @ file mentions.",
+    "A Help menu, and each window is titled after its chat.",
+    "Command-Q warns you if chats are still running."
+   ],
+   "improved": [
+    "Dev builds are a separate IDX Dev app, so they never mix with the real one.",
+    "Check for Updates always gives an answer, and a notification appears when an update is ready.",
+    "Menus work with no window open, and relaunching from the Dock opens a window."
+   ]
+  },
+  {
+   "version": "0.1.0",
+   "date": "2026-10-11",
+   "headlines": [
+    "The first release: a signed, notarized IDX with auto-update."
+   ],
+   "new": [
+    "The first signed and notarized release, with automatic updates."
+   ]
+  }
+ ]
+}

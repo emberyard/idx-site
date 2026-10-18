@@ -1,8 +1,6 @@
 node_modules/
 dist/
+_work/
+_captures/
 .DS_Store
 *.log
-.lighthouse/
-.tokenize/
-legal/*/
-legal/*/index.html
