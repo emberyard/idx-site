@@ -1,25 +1,17 @@
 {
   "name": "idx-site",
   "private": true,
-  "version": "0.1.0",
+  "version": "0.3.0",
   "type": "module",
-  "description": "Landing page for IDX",
+  "description": "Public site for the IDX working name",
   "scripts": {
-    "dev": "node scripts/legal.mjs && vite",
-    "build": "node scripts/legal.mjs && vite build",
-    "preview": "vite preview",
-    "typecheck": "tsc --noEmit",
-    "og": "node scripts/og.mjs"
+    "build": "node build.mjs",
+    "build:subpath": "SITE_BASE=/idx/ node build.mjs --out dist-subpath",
+    "qa": "node scripts/qa.mjs",
+    "images": "python3 scripts/images.py",
+    "changelog": "node --experimental-strip-types --no-warnings scripts/sync-changelog.mjs",
+    "audit": "node scripts/public-audit.mjs dist",
+    "serve": "node scripts/serve.mjs dist 8765"
   },
-  "devDependencies": {
-    "@tailwindcss/vite": "^4.3.3",
-    "@types/node": "^22",
-    "marked": "^18.1.0",
-    "tailwindcss": "^4.3.3",
-    "typescript": "^5.9.3",
-    "vite": "^8.3.4"
-  },
-  "engines": {
-    "node": ">=22"
-  }
+  "engines": { "node": ">=22" }
 }

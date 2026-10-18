@@ -1,20 +1,33 @@
-name: Deploy to GitHub Pages
+name: Site
 
 on:
+  pull_request:
   push:
     branches: [main]
   workflow_dispatch:
 
 permissions:
   contents: read
-  pages: write
-  id-token: write
 
 concurrency:
-  group: pages
+  group: pages-${{ github.ref }}
   cancel-in-progress: true
 
+env:
+  SITE_BASE: /idx-site/
+  SITE_ORIGIN: https://emberyard.github.io
+
 jobs:
+  title-key:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - name: PR title carries a Jira key
+        env:
+          TITLE: ${{ github.event.pull_request.title }}
+        run: |
+          echo "$TITLE" | grep -Eq '(^|[^A-Z])IDX-[0-9]+' || { echo "PR title needs a Jira key like IDX-213"; exit 1; }
+
   build:
     runs-on: ubuntu-latest
     steps:
@@ -22,18 +35,22 @@ jobs:
       - uses: actions/setup-node@v7
         with:
           node-version-file: .nvmrc
-          cache: npm
-      - run: npm ci
-      - run: npm run typecheck
-      - run: npm run build
+      - run: node build.mjs
+      - run: node scripts/public-audit.mjs dist
       - uses: actions/configure-pages@v6
+        if: github.event_name != 'pull_request'
       - uses: actions/upload-pages-artifact@v5
+        if: github.event_name != 'pull_request'
         with:
           path: dist
 
   deploy:
+    if: github.event_name != 'pull_request'
     needs: build
     runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
