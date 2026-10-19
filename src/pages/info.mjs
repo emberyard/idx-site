@@ -86,7 +86,7 @@ export function changelog(c) {
     const released = entries.filter((e) => newer(e.version, cur) <= 0);
     const next = entries.filter((e) => newer(e.version, cur) > 0);
     const art = (e, isNext) => `<article class="rel" id="v${e.version}"><div class="v">v${e.version}${e.version === cur ? '<span class="pill">Latest</span>' : ''}${isNext ? '<span class="pill">Not released</span>' : ''}<small>${esc(fmt(e.date))}</small></div><div><h2>${esc(e.headlines[0] ?? '')}</h2>${e.headlines[1] ? `<p class="muted">${esc(e.headlines[1])}</p>` : ''}${sec('New', e.new)}${sec('Improved', e.improved)}${sec('Fixed', e.fixed)}</div></article>`;
-    html = (next.length ? `<div class="notice-next"><p><b>Coming next.</b> Merged or being finished, not released yet. Dates and wording can still change.${c.draftTag('Preview of unreleased entries')}</p></div>${next.map((e) => art(e, true)).join('')}<hr class="relsep">` : '') + released.map((e) => art(e, false)).join('');
+    html = (next.length ? `<div class="notice-next"><p><b>Coming next.</b> Merged or being finished, not released yet. Dates and wording can still change.</p></div>${next.map((e) => art(e, true)).join('')}<hr class="relsep">` : '') + released.map((e) => art(e, false)).join('');
     lede = `${released.length} releases since 11 Oct 2026, newest first. This page is generated from the same list the app shows as “What’s new”, so the two cannot disagree.`;
   } else {
     const rows = CHANGES(c);

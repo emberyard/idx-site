@@ -1,0 +1,150 @@
+{
+ "source": "github.com/emberyard/idx-releases releases",
+ "releases": [
+  {
+   "version": "0.1.28",
+   "published": "2026-10-18T23:04:53Z",
+   "dmgBytes": 143262345
+  },
+  {
+   "version": "0.1.27",
+   "published": "2026-10-18T20:58:33Z",
+   "dmgBytes": 143207193
+  },
+  {
+   "version": "0.1.26",
+   "published": "2026-10-15T09:29:49Z",
+   "dmgBytes": 143252084
+  },
+  {
+   "version": "0.1.25",
+   "published": "2026-10-14T18:20:46Z",
+   "dmgBytes": 143191179
+  },
+  {
+   "version": "0.1.24",
+   "published": "2026-10-14T16:03:08Z",
+   "dmgBytes": 143120329
+  },
+  {
+   "version": "0.1.23",
+   "published": "2026-10-14T12:32:24Z",
+   "dmgBytes": 143169905
+  },
+  {
+   "version": "0.1.22",
+   "published": "2026-10-14T07:51:56Z",
+   "dmgBytes": 143163531
+  },
+  {
+   "version": "0.1.21",
+   "published": "2026-10-14T05:39:32Z",
+   "dmgBytes": 143111819
+  },
+  {
+   "version": "0.1.20",
+   "published": "2026-10-14T04:02:13Z",
+   "dmgBytes": 143078360
+  },
+  {
+   "version": "0.1.19",
+   "published": "2026-10-14T03:05:12Z",
+   "dmgBytes": 143079043
+  },
+  {
+   "version": "0.1.18",
+   "published": "2026-10-14T02:18:08Z",
+   "dmgBytes": 143037690
+  },
+  {
+   "version": "0.1.17",
+   "published": "2026-10-14T02:01:14Z",
+   "dmgBytes": 142963030
+  },
+  {
+   "version": "0.1.16",
+   "published": "2026-10-14T00:15:35Z",
+   "dmgBytes": 142944987
+  },
+  {
+   "version": "0.1.15",
+   "published": "2026-10-13T22:30:42Z",
+   "dmgBytes": 142913266
+  },
+  {
+   "version": "0.1.14",
+   "published": "2026-10-13T21:11:07Z",
+   "dmgBytes": 142899889
+  },
+  {
+   "version": "0.1.13",
+   "published": "2026-10-13T19:09:04Z",
+   "dmgBytes": 142876730
+  },
+  {
+   "version": "0.1.12",
+   "published": "2026-10-13T17:16:00Z",
+   "dmgBytes": 142895775
+  },
+  {
+   "version": "0.1.11",
+   "published": "2026-10-13T07:38:33Z",
+   "dmgBytes": 142890258
+  },
+  {
+   "version": "0.1.10",
+   "published": "2026-10-13T05:43:06Z",
+   "dmgBytes": 142880375
+  },
+  {
+   "version": "0.1.9",
+   "published": "2026-10-13T05:07:50Z",
+   "dmgBytes": 142882142
+  },
+  {
+   "version": "0.1.8",
+   "published": "2026-10-13T02:16:43Z",
+   "dmgBytes": 142781277
+  },
+  {
+   "version": "0.1.7",
+   "published": "2026-10-13T00:21:02Z",
+   "dmgBytes": 142625446
+  },
+  {
+   "version": "0.1.6",
+   "published": "2026-10-12T22:34:30Z",
+   "dmgBytes": 142491266
+  },
+  {
+   "version": "0.1.5",
+   "published": "2026-10-12T07:39:31Z",
+   "dmgBytes": 142465931
+  },
+  {
+   "version": "0.1.4",
+   "published": "2026-10-12T00:44:45Z",
+   "dmgBytes": 258410290
+  },
+  {
+   "version": "0.1.3",
+   "published": "2026-10-11T18:45:23Z",
+   "dmgBytes": 258683182
+  },
+  {
+   "version": "0.1.2",
+   "published": "2026-10-11T17:03:22Z",
+   "dmgBytes": 257307732
+  },
+  {
+   "version": "0.1.1",
+   "published": "2026-10-11T16:24:58Z",
+   "dmgBytes": 257244896
+  },
+  {
+   "version": "0.1.0",
+   "published": "2026-10-11T15:17:08Z",
+   "dmgBytes": 257237561
+  }
+ ]
+}

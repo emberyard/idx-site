@@ -41,9 +41,11 @@ export function context(cfg) {
     return `<figure class="fig${d.w < 2000 ? ' crop' : ''}${full ? ' pan' : ''}"><div class="${frame ? 'frame' : ''}">${inner}</div>${full ? '<p class="pan-hint">Swipe sideways to pan</p>' : ''}${list}${caption ? `<figcaption>${caption}</figcaption>` : ''}</figure>`;
   }
 
-  const draftTag = (t = 'Placeholder') => (cfg.flags.draft ? `<span class="placeholder-tag">${esc(t)}</span>` : '');
-  const mail = () => (B.email ? `<a href="mailto:${esc(B.email)}">${esc(B.email)}</a>` : `not published yet${draftTag()}`);
+  // A small visible label for things that are real but not in the current release.
+  const tag = (t) => `<span class="placeholder-tag">${esc(t)}</span>`;
+  const draftTag = () => ''; // placeholder labels are retired: copy now says plainly what is true
+  const mail = () => (B.email ? `<a href="mailto:${esc(B.email)}">${esc(B.email)}</a>` : 'not published yet');
   const a = cfg.access;
   const access = { state: a.state, live: a.state !== 'placeholder', href: a.state === 'placeholder' ? url('') + '#access' : a.url, label: a.state === 'download' ? 'Download for macOS' : a.state === 'waitlist' ? 'Join the waitlist' : 'Early access' };
-  return { cfg, B, N, base, origin, url, abs, kbd, shot, esc, draftTag, mail, access, dims };
+  return { cfg, B, N, base, origin, url, abs, kbd, shot, esc, tag, draftTag, mail, access, dims };
 }
