@@ -3,33 +3,50 @@
  "entries": [
   {
    "version": "0.1.28",
-   "date": "2026-10-18",
+   "date": "2026-10-19",
+   "headlines": [
+    "Adding an account starts with six plain choices that say what each costs and where you sign in.",
+    "Details opens long output, changes, plans, files and pictures at full size, with search, previews, back / forward and an optional Follow agent."
+   ],
+   "new": [
+    "Google accounts show their route: Gemini CLI or Antigravity. A Gemini Google sign-in says Route not confirmed until you note it has a Code Assist licence, because Gemini CLI stopped serving free, Google AI Pro and Google AI Ultra accounts on 18 Jun 2026.",
+    "Add account: pick from six kinds (Claude subscription, Claude API key, Gemini API key, Gemini Google sign-in, Cloud or enterprise, Antigravity), with a comparison of what each can do and which sign-in opens your browser.",
+    "An account's information now lists what it can do and what it cannot.",
+    "Browser panel tabs can be reordered: drag a tab, or press the Move Tab Left and Move Tab Right keys. The order is remembered for each project.",
+    "Queued messages can be reordered: Move earlier and Move later, a drag handle, or Option with the up and down arrows on the handle. The agent reads them in your order, and nothing moves unless you move it.",
+    "Long code blocks in an answer fold to the first lines with Show all N lines. Copy still copies everything; Detail level Everything opens them.",
+    "Pictures a tool returns (Claude reading a PNG, a screenshot) show under the step and open full size in Details; they come back after a restart.",
+    "Gemini chats use the same chips and Details: a sub-agent step, the plan it wrote, changed files and its checklist. Only what Gemini sends is shown.",
+    "Long command output, edits, the plan and the to-do list open in Details: search a long log, show only errors, copy or save it, see a change or the plan at full size.",
+    "Files Claude writes, edits or sends can be previewed in Details: Markdown, images, SVG, PDF, HTML (scripts off), CSV as a table, JSON as a tree, notebooks, text and code, with Source and Changes tabs.",
+    "Details has Back and Forward (Option plus the arrow keys) and a Follow agent switch, off by default, that shows the running sub-agent without moving your focus.",
+    "A running sub-agent shows a short line about what it is doing. Settings > General > Sub-agent progress lines turns it off (it costs a little)."
+   ],
+   "improved": [
+    "Accounts made in older versions keep their folders and settings untouched. Two accounts that share a name are flagged with a Rename button.",
+    "Share my setup now also shares your plugins (read from your own folder, read-only) and your MCP servers with a Claude account. MCP servers that hold a sign-in are left out and named.",
+    "Pin an account as a project's default for new chats from the account menu. A pay-per-token account can never be pinned.",
+    "A chat can move to another account of the same tool from the account button in the message box. A short note first says what changes: billing, features, limits and where the history lives. It only ever happens when you choose it.",
+    "Share my setup for a Gemini account now copies your Gemini settings (without anything that could carry a sign-in) each time the account starts, so your MCP servers and preferences show up there. Instructions and extensions are still linked.",
+    "Previous Chat and Next Chat follow the order you see in the sidebar: pinned first, then recent, in the order you set. A chat that needs you is no longer jumped to first (use Next Needs You for that).",
+    "One wording for chats that wait on you: Needs you, in the sidebar, the Dock menu and the project browser."
+   ],
+   "fixed": [
+    "The What's new card no longer shows on a first install, only after an update."
+   ]
+  },
+  {
+   "version": "0.1.27",
+   "date": "2026-10-19",
    "headlines": [
     "New chats start the way you left them: view, permission mode, model and effort.",
-    "What's new: you will always see what changed after an update."
+    "A Details panel for sub-agents, many Terminal upgrades, and a What's new card after every update."
    ],
    "new": [
     "What's new: after an update a quiet card tells you what changed. Help > What's New and Settings > About list every version.",
     "The update button now shows the top one or two changes before you restart.",
     "New chats start in the permission mode, model and effort you last used in that project, separately for Claude and Gemini.",
-    "Settings > Trust & permissions: Start new chats in the mode I used last, with an off switch."
-   ],
-   "improved": [
-    "Chats come back after a restart in the view you left them in, Chat or Terminal.",
-    "A chat in Bypass is always named in the sidebar and the mode button says where the mode came from.",
-    "A Claude chat started in the terminal now begins with your chosen model and effort.",
-    "Bypass used in one project is never carried into a project that has not confirmed it.",
-    "Release notes on GitHub now come from the same list as the in-app What's new."
-   ]
-  },
-  {
-   "version": "0.1.27",
-   "date": "2026-10-18",
-   "headlines": [
-    "New chats can open in Chat or Terminal, whichever you used last in that project.",
-    "A Details panel for sub-agents, and many Terminal upgrades."
-   ],
-   "new": [
+    "Settings > Trust & permissions: Start new chats in the mode I used last, with an off switch.",
     "Same as last time: a new chat opens in Chat or Terminal, whichever you used last in that project.",
     "Details panel beside the chat, with a chip for each sub-agent.",
     "Terminal: find in scrollback, clickable file paths, a Scroll to bottom button, Clear Terminal, a right-click menu and Copy on select (off by default).",
@@ -37,6 +54,11 @@
     "Terminal text size has its own keys (Control-Command plus, minus and 0)."
    ],
    "improved": [
+    "Chats come back after a restart in the view you left them in, Chat or Terminal.",
+    "A chat in Bypass is always named in the sidebar and the mode button says where the mode came from.",
+    "A Claude chat started in the terminal now begins with your chosen model and effort.",
+    "Bypass used in one project is never carried into a project that has not confirmed it.",
+    "Release notes on GitHub now come from the same list as the in-app What's new.",
     "When a plan limit is reached, a calm strip lets you switch account yourself and reminds you at reset. Stopped chats get a Resume button.",
     "A message blocked by your own hook shows as one row with a count and the hook message to copy.",
     "Sub-agent steps come back when you import or catch up a chat from the terminal.",

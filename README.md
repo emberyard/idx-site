@@ -10,8 +10,8 @@ node scripts/qa.mjs --widths 320,1280,2560   # headless Chrome checks: overflow,
 python3 scripts/images.py               # raw captures -> WebP set
 ```
 
-- `site.config.mjs`: name (working name), tagline, release facts, access state, flags.
+- `site.config.mjs`: name (working name), tagline, access state, flags. Version, date, size and release count are NOT set here: `src/release.mjs` reads them from the public releases repo at build time (falls back to `data/releases.json`). The deploy also rebuilds every 6 hours, so they cannot go stale.
 - `src/pages/*.mjs`, `src/static/*.html`: pages. `src/base.css`, `src/site.css`: styles.
-- `data/changelog.json`: snapshot of the app changelog, shown on the What's new page.
+- `data/changelog.json`: snapshot of the app changelog (released versions only), shown on the What's new page. After each release: `CHANGELOG_SRC=<changelog.ts> npm run changelog`, which also refreshes `data/releases.json`.
 - Screenshots use invented demo data only.
 - Deploys on every merge to `main` (squash merge only; PR title carries a Jira key).

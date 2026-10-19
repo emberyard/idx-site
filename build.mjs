@@ -11,6 +11,8 @@ import { pages } from './src/pages/index.mjs';
 const root = dirname(fileURLToPath(import.meta.url));
 const oi = process.argv.indexOf('--out');
 const out = resolve(root, oi > 0 ? process.argv[oi + 1] : 'dist');
+import { loadRelease } from './src/release.mjs';
+cfg.release = await loadRelease(cfg.release);
 const c = context(cfg);
 const { N, B, base, url, abs } = c;
 

@@ -20,7 +20,7 @@ const ROWS = [
     ['Folder trust', 'P', 'P', 'Trust levels per project; CLI trust dialogs still need the terminal'],
   ]],
   ['Background work', [
-    ['Subagents: one chip in the chat that opens in a Details panel (next release), with Stop', 'F', 'P', 'Gemini: shown as ordinary tool calls'],
+    ['Subagents: one chip in the chat that opens in a Details panel, with Stop', 'F', 'P', 'Gemini: shown as ordinary tool calls'],
     ['Background commands: move to background, a Running tray', 'F', 'N', ''],
     ['Monitors', 'F', 'X', ''],
     ['Workflow runs', 'P', 'X', 'Shown as a generic task row'],

@@ -5,6 +5,8 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
+  schedule:
+    - cron: '17 */6 * * *' # rebuild so the version and date follow the latest public release
 
 permissions:
   contents: read
@@ -36,6 +38,8 @@ jobs:
         with:
           node-version-file: .nvmrc
       - run: node build.mjs
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
       - run: node scripts/public-audit.mjs dist
       - uses: actions/configure-pages@v6
         if: github.event_name != 'pull_request'

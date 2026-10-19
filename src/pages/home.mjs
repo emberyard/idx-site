@@ -83,11 +83,11 @@ const tour = (c) => {
 const showcase = (c) => {
   const { N, kbd, shot } = c;
   const rows = [
-    { id: 'details', eyebrow: 'Sub-agents', t: 'Helpers stay out of your way until you want them.', p: `When an agent hands work to a helper, the chat shows one calm line: its name, status, steps and a one-line result. Open it and the whole run unfolds beside the chat: the prompt, every step, the result. A running helper adds steps as they happen. Nothing opens by itself.`, keys: [[kbd(']'), 'next'], [kbd('['), 'previous'], [kbd('W'), 'close'], [kbd('Esc'), 'back to the chat']], img: 'details', alt: `A chat with two sub-agent lines, one done and one working, and the Details panel open beside it showing the finished run: its prompt, its steps and its result table.`, wide: true, note: 'Details panel: merged for the next release.' },
+    { id: 'details', eyebrow: 'Sub-agents', t: 'Helpers stay out of your way until you want them.', p: `When an agent hands work to a helper, the chat shows one calm line: its name, status, steps and a one-line result. Open it and the whole run unfolds beside the chat: the prompt, every step, the result. A running helper adds steps as they happen. Nothing opens by itself.`, keys: [[kbd(']'), 'next'], [kbd('['), 'previous'], [kbd('W'), 'close'], [kbd('Esc'), 'back to the chat']], img: 'details', alt: `A chat with two sub-agent lines, one done and one working, and the Details panel open beside it showing the finished run: its prompt, its steps and its result table.`, wide: true, note: 'New in v0.1.27; v0.1.28 adds full-size previews.' },
     { id: 'folds', eyebrow: 'Detail level', t: 'See as much or as little as you need.', p: `Long agent work folds into rows that say what is inside: steps, files, failures. A failed step opens itself and never hides. Pick Summary, Normal or Everything per chat, and collapse or expand every step at once. ${N} remembers what you opened, chat by chat.`, keys: [[kbd('⌥', '⌘', 'L'), 'next detail level'], [kbd('⌥', '⌘', 'E'), 'expand all'], [kbd('⇧', '⌥', '⌘', 'E'), 'collapse all']], img: 'folds', alt: `A chat column with steps folded into one line each, a Write step open with its added lines, and a closed row that reads Worked for 1m 34s, 5 steps, 1 file.` },
     { id: 'sendnow', eyebrow: 'Send now', t: 'Talk to an agent while it works.', p: `Type while Claude is mid-task. Send reads your message at the next safe point. Send now cuts in at once but never kills a running command. Redirect stops the tool and sends. You can write while a permission waits; nothing is approved for you.`, keys: [[kbd('↵'), 'send'], [kbd('⌃', '↵'), 'send now'], [kbd('⌘', '↵'), 'redirect']], img: 'sendnow', alt: `The message box while an agent works: a typed message, the hint “send, send now, redirect”, and Stop and Send now buttons.` },
-    { id: 'terminal', eyebrow: 'Terminal', t: 'A real terminal, with the features you miss.', p: `Every agent has a real terminal one click away. Find in the whole scrollback, file paths with line numbers that open the file, a button to jump to the newest output, a right-click menu, clear, copy on select (off until you want it), its own text size keys, and a scrollback you choose.`, keys: [[kbd('⌘', 'F'), 'find'], [kbd('⌥', '⌘', 'K'), 'clear'], [kbd('⌃', '⌘', '='), 'bigger text']], img: 'terminal', alt: `The terminal panel beside a chat: a test run, a find bar with the match highlighted and file paths with line numbers.`, note: 'Terminal upgrades: merged for the next release.' },
-    { id: 'limits', eyebrow: 'Accounts and limits', t: 'You decide when an account switches. Never the app.', p: `Several Claude and Gemini sign-ins, each with its own folder, side by side. When a plan limit is reached, a calm strip says which account and when it resets. Switching account for that chat is a button you press, a reminder at the reset is optional, and nothing is rotated behind your back.`, img: 'limit', alt: `The Connected accounts strip with two Claude accounts, Gemini and an Antigravity account, then a stopped chat reading “Stopped: session limit” above a message box that says the limit is reached and you can still send.`, extra: `<div class="note-honest"><b>Honest about Google Antigravity.</b> ${esc(N)} opens Antigravity as a terminal tab you type into, nothing more. Google’s FAQ says that wrapping it in another app, or rotating accounts automatically, is not supported on consumer plans, so ${esc(N)} never does either. <a href="${c.url('claude-and-gemini/')}">Details</a></div>`, note: 'Limit strip and manual switch: merged for the next release.' },
+    { id: 'terminal', eyebrow: 'Terminal', t: 'A real terminal, with the features you miss.', p: `Every agent has a real terminal one click away. Find in the whole scrollback, file paths with line numbers that open the file, a button to jump to the newest output, a right-click menu, clear, copy on select (off until you want it), its own text size keys, and a scrollback you choose.`, keys: [[kbd('⌘', 'F'), 'find'], [kbd('⌥', '⌘', 'K'), 'clear'], [kbd('⌃', '⌘', '='), 'bigger text']], img: 'terminal', alt: `The terminal panel beside a chat: a test run, a find bar with the match highlighted and file paths with line numbers.`, note: 'New in v0.1.27.' },
+    { id: 'limits', eyebrow: 'Accounts and limits', t: 'You decide when an account switches. Never the app.', p: `Several Claude and Gemini sign-ins, each with its own folder, side by side. When a plan limit is reached, a calm strip says which account and when it resets. Switching account for that chat is a button you press, a reminder at the reset is optional, and nothing is rotated behind your back.`, img: 'limit', alt: `The Connected accounts strip with two Claude accounts, Gemini and an Antigravity account, then a stopped chat reading “Stopped: session limit” above a message box that says the limit is reached and you can still send.`, extra: `<div class="note-honest"><b>Honest about Google Antigravity.</b> ${esc(N)} opens Antigravity as a terminal tab you type into, nothing more. Google’s FAQ says that wrapping it in another app, or rotating accounts automatically, is not supported on consumer plans, so ${esc(N)} never does either. <a href="${c.url('claude-and-gemini/')}">Details</a></div>`, note: 'New in v0.1.27.' },
   ];
   return `
 <section id="cockpit">
@@ -96,7 +96,7 @@ const showcase = (c) => {
     ${rows.map((r, i) => `<article class="show${i % 2 ? ' flip' : ''}${r.wide ? ' wide' : ''}" id="${r.id}">
       <div class="show-text"><p class="eyebrow">${esc(r.eyebrow)}</p><h3>${r.t}</h3><p class="muted">${r.p}</p>
         ${r.keys ? `<p class="keys">${r.keys.map(([k, l]) => `<span>${k} ${esc(l)}</span>`).join('')}</p>` : ''}
-        ${r.extra ?? ''}${r.note ? `<p class="show-note">${esc(r.note)}${c.draftTag('Not in the current release')}</p>` : ''}</div>
+        ${r.extra ?? ''}${r.note ? `<p class="show-note">${esc(r.note)}</p>` : ''}</div>
       <div class="show-img">${shot(r.img, { alt: r.alt, sizes: r.wide ? '(min-width: 120rem) 100rem, 100vw' : '(min-width: 62em) 62vw, 100vw' })}</div>
     </article>`).join('')}
   </div>
@@ -120,7 +120,7 @@ export function home(c) {
       <a class="btn primary" href="${dl.href}">${esc(dl.label)}</a>
       <a class="btn" href="#cockpit">See the cockpit</a>
     </div></div></div>
-    <p class="smallprint">Private beta. Mac only (${esc(rel.chip)}, macOS ${esc(rel.minMacOS)} or newer). Needs Claude Code or Gemini CLI. ${esc(N)} is a working name.${c.draftTag('Access: placeholder')}</p>
+    <p class="smallprint">Private beta, by invitation. Mac only (${esc(rel.chip)}, macOS ${esc(rel.minMacOS)} or newer). Needs Claude Code or Gemini CLI. ${esc(N)} is a working name and may change.</p>
   </div>
   <div class="wrap wide hero-stage">
     ${shot('hero', { eager: true, mobile: 'hero-m', sizes: '(min-width: 120rem) 120rem, 100vw', alt: `A ${N} window at 4K: a sidebar of projects and chats on the left, a chat in the middle with folded steps, an open diff and the changed files, and the right panel with Files, Browser, Diff, Terminal and Details tabs.`, marks: [[28, 2.3, 'Project tabs: one project per tab or window'], [13.2, 36, 'Every project and its chats, with status'], [59.2, 5.6, 'Chat or Terminal: the same conversation'], [58.8, 38, 'Every step is a row you can open'], [69.1, 5.6, 'Files, Diff, Terminal and Details beside the chat']], caption: 'Real screenshot of the current build at 2560 x 1440, invented demo data.' })}
@@ -222,7 +222,7 @@ export function home(c) {
     <div class="stats-row">
       <div class="stat"><b>94</b><span>projects in my last tool, opened about 2,241 times</span><small>My own data, audited 14 Oct</small></div>
       <div class="stat"><b>69%</b><span>of everything I opened was a terminal tab</span><small>My own data, audited 14 Oct</small></div>
-      <div class="stat"><b>${rel.releasesCount}</b><span>signed and notarized releases in five days</span><small>Release history, 11 to 15 Oct</small></div>
+      <div class="stat"><b>${rel.releasesCount}</b><span>signed and notarized releases in ${rel.spanDays} days</span><small>Release history, ${esc(rel.firstDate)} to ${esc(rel.date)}</small></div>
       <div class="stat"><b>~21 h</b><span>from first commit to the first signed release</span><small>Git log and release time; derived</small></div>
     </div>
   </div>
@@ -266,9 +266,9 @@ export function home(c) {
       <div>
         <p class="eyebrow">Early access</p>
         <h2>${dl.live ? 'Try it on your Mac.' : 'A private beta, for now.'}</h2>
-        <p class="muted" style="margin-top:1rem">${dl.live ? `Signed and approved by Apple. It updates itself.` : `${esc(N)} is closed while it is young. How people get in has not been decided yet.`}${c.draftTag('Placeholder, not decided')}</p>
-        <div class="btn-row" style="margin-top:1.25rem">${dl.live ? `<a class="btn primary" href="${dl.href}">${esc(dl.label)}</a>` : `<span class="btn" role="note" aria-label="Early access is not open yet">Early access: not open yet</span>`}<a class="btn" href="${url('changelog/')}">See the changelog</a></div>
-        <p class="smallprint">Contact: ${c.mail()}</p>
+        <p class="muted" style="margin-top:1rem">${dl.live ? `Signed and approved by Apple. It updates itself.` : `${esc(N)} is a private beta and open by invitation only. It is young, and the working name may change.`}</p>
+        <div class="btn-row" style="margin-top:1.25rem">${dl.live ? `<a class="btn primary" href="${dl.href}">${esc(dl.label)}</a>` : `<span class="btn" role="note" aria-label="Access is by invitation">By invitation</span>`}<a class="btn" href="${url('changelog/')}">See the changelog</a></div>
+        <p class="smallprint">${B.email ? `Contact: ${c.mail()}` : 'There is no public contact address yet. It will be listed here once there is one.'}</p>
       </div>
       <ul class="facts">
         <li>Version <b>${esc(rel.version)}, ${esc(rel.date)}</b></li>
