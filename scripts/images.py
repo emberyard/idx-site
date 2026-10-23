@@ -7,7 +7,7 @@ into the site's WebP set.
 Writes public/img/<id>-<theme>-<w>.webp (several widths for srcset) and public/img/dims.json.
 Crops are fractions (left, top, right, bottom) of the source, cut from the retina original so text stays sharp.
 A spec's source may be a list of (source, box) pieces: they are stacked top to bottom with a gap.
-Captures are of the current build (v0.1.26 plus what is merged for v0.1.27), invented demo data only.
+Captures are of the current build (v0.1.36), invented demo data only.
 """
 import json, os
 from PIL import Image
@@ -24,24 +24,25 @@ FULL = (1280, 2560, 3840)
 # id: (source capture, crop box or None, widths)
 SPEC = {
     'hero':      ('hero-panel', None, FULL),
-    'home':      ('home', None, FULL),
+    'home':      ('hero-chat', (0.0, 0.0, 0.62, 0.62), (1280, 2560)),
     'project':   ('hero-chat', None, FULL),
     'details':   ('details-open', None, FULL),
     'details-thread': ('details-thread', (0.0, 0.0, 1.0, 0.62), (1280, 2560)),
     'details-running': ('details-running', None, (1280, 2560)),
-    'hero-m':    ('hero-panel', (0.20, 0.0, 0.58, 0.88), (640, 1200)),
-    'folds':     ('hero-panel', (0.24, 0.07, 0.59, 0.64), (900, 1600)),
-    'needs':     ('needs', (0.27, 0.08, 0.84, 0.40), (900, 1600)),
+    'hero-m':    ('hero-chat', (0.19, 0.0, 0.63, 0.97), (640, 1200)),
+    'folds':     ('hero-chat', (0.24, 0.165, 0.60, 0.54), (900, 1600)),
+    'needs':     ('needs', (0.30, 0.24, 0.84, 0.405), (900, 1600)),
     'switcher':  ('palette', (0.36, 0.03, 0.65, 0.38), (900, 1600)),
-    'accounts':  ('accounts', (0.29, 0.10, 0.84, 0.26), (900, 1600)),
-    'trust':     ('trust', (0.29, 0.05, 0.84, 0.40), (900, 1600)),
+    'accounts':  ('accounts', (0.30, 0.125, 0.83, 0.25), (900, 1600)),
+    'trust':     ('trust', (0.30, 0.095, 0.84, 0.41), (900, 1600)),
     'terminal':  ('terminal', (0.695, 0.0, 1.0, 0.34), (900, 1600)),
     'shortcuts': ('shortcuts', (0.33, 0.04, 0.67, 0.98), (900, 1500)),
-    'sendnow':   ([('sendnow', (0.235, 0.09, 0.595, 0.20)), ('sendnow', (0.235, 0.875, 0.595, 0.99))], None, (900, 1600)),
-    'limit':     ([('accounts', (0.29, 0.10, 0.84, 0.26)), ('limit', (0.29, 0.06, 0.84, 0.19)), ('limit', (0.29, 0.86, 0.84, 0.99))], None, (900, 1600)),
-    'menu':      ('folds-menu', (0.0, 0.05, 0.40, 0.90), (900, 1400)),
+    'sendnow':   ([('sendnow', (0.25, 0.09, 0.585, 0.22)), ('sendnow', (0.25, 0.885, 0.585, 0.995))], None, (900, 1600)),
+    'limit':     ([('limit', (0.29, 0.07, 0.85, 0.245)), ('limit', (0.29, 0.885, 0.85, 0.995))], None, (900, 1600)),
+    'menu':      ('folds-menu', (0.06, 0.06, 0.28, 0.74), (900, 1400)),
+    'restart':   ('interrupted', (0.24, 0.07, 0.60, 0.27), (900, 1600)),
     'sandbox':   ('sandbox', None, (1280, 2560)),
-    'archive':   ('archive', (0.20, 0.0, 0.90, 0.30), (900, 1600)),
+    'archive':   ('archive', (0.20, 0.03, 0.58, 0.33), (900, 1600)),
 }
 
 def load(src, theme):
