@@ -65,7 +65,7 @@ export function support(c) {
   ${table}
   <p class="smallprint">Derived from reading the app’s code against Claude Code 2.1.295 and Gemini CLI 0.64.0 at version ${esc(c.cfg.release.version)}, on 14 Oct 2026, with later rows touched up on 18 Oct. These tools change weekly, so the list will move with each release. See the <a href="${url('changelog/')}">changelog</a>.</p>
   <h2 style="margin-top:3rem">Not made by Anthropic or Google</h2>
-  <p class="muted">${esc(N)} ${esc(c.cfg.nonAffiliation)} It ships neither tool and never handles your sign-in.</p>
+  <p class="muted">${esc(N)} ${esc(c.cfg.nonAffiliation)} It ships neither tool, and each tool keeps its own sign-in.</p>
 </div>`;
   return { body };
 }
@@ -89,7 +89,7 @@ export const FAQ = (c) => {
       ['Is it signed? Does it update itself?', `Yes. Releases are signed with a Developer ID, approved by Apple (notarized) and update themselves. A Restart to update button appears when one is ready and warns you if chats are still running.`],
     ]],
     ['Your tools and accounts', [
-      ['Do I need Claude Code or Gemini CLI?', `Yes, at least one. ${N} runs your own copy, ships neither, and never handles your sign-in.`],
+      ['Do I need Claude Code or Gemini CLI?', `Yes, at least one. ${N} runs your own copy, ships neither, and each keeps its own sign-in.`],
       ['Do I need an API key or an account with you?', `Not for ${N} itself: there is no ${N} account, no sign-up and no server in between. Your Claude Code or Gemini CLI use is billed by Anthropic or Google to your own account.`],
       ['Does it work with Gemini?', `Yes, in the chat view with Gemini CLI on an API key, a paid plan or a company plan. It is thinner than Claude support. Since 18 June 2026 Google no longer serves Gemini CLI for individual accounts, so a free personal sign-in will not work. See <a href="${url('claude-and-gemini/')}">Claude + Gemini</a>.`],
       ['Is it made by Anthropic or Google?', `No. ${N} ${cfg.nonAffiliation}`],

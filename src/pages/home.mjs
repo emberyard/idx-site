@@ -209,7 +209,7 @@ export function home(c) {
   const tools = `
 <section id="tools">
   <div class="wrap">
-    <div class="sec-head"><p class="eyebrow">Your tools, not ours</p><h2>Five coding CLIs, one window.</h2><p>${esc(N)} ships none of them and never handles your sign-in. Each provider bills your own account. Support differs by CLI, as below.</p></div>
+    <div class="sec-head"><p class="eyebrow">Your tools, not ours</p><h2>Five coding CLIs, one window.</h2><p>${esc(N)} ships none of them, and each keeps its own sign-in. Each provider bills your own account. Support differs by CLI, as below.</p></div>
     <ol class="cli-flow" aria-label="How a new chat starts">
       <li><span class="num">1</span><b>CLI</b><small>Claude, Gemini, Antigravity, Grok or Cursor</small></li>
       <li><span class="num">2</span><b>Model</b><small>Remembered per CLI</small></li>
@@ -267,7 +267,7 @@ export function home(c) {
   <div class="wrap">
     <div class="grid c2" style="align-items:center">
       <div><p class="eyebrow">Privacy</p><h2>Your data stays on your Mac.</h2></div>
-      <div><p class="muted">No account, no sign-up, no analytics, no telemetry. Projects and settings live in one local database. Only your own CLIs talk to their providers, as they already do. <a href="${url('privacy/')}">Read the privacy and security note</a>.</p></div>
+      <div><p class="muted">No account, no sign-up, no analytics, no telemetry. Projects and settings live in one local database. Only your own CLIs talk to their providers, as they already do; saved keys are encrypted on your Mac. <a href="${url('privacy/')}">Read the privacy and security note</a>.</p></div>
     </div>
   </div>
 </section>`;
