@@ -7,7 +7,8 @@ SITE_BASE=/idx-site/ SITE_ORIGIN=https://emberyard.github.io node build.mjs   # 
 node scripts/public-audit.mjs dist      # fails on local paths, prices, names, secrets, private URLs
 node scripts/serve.mjs dist 8765        # local preview
 node scripts/qa.mjs --widths 320,1280,2560   # headless Chrome checks: overflow, contrast, targets, alt, console
-python3 scripts/images.py               # raw captures -> WebP set
+python3 scripts/images.py               # raw captures -> WebP set (RAW=<dir of 5120x2880 captures>)
+node scripts/og.mjs                     # redraw the five 1200x630 share images from the current screenshots
 ```
 
 - `site.config.mjs`: name (working name), tagline, access state, flags. Version, date, size and release count are NOT set here: `src/release.mjs` reads them from the public releases repo at build time (falls back to `data/releases.json`). The deploy also rebuilds every 6 hours, so they cannot go stale.

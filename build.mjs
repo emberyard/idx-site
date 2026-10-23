@@ -50,7 +50,7 @@ const footer = `<footer class="site">
     </div>
     <div class="legal">
       <span>${esc(N)} ${esc(cfg.nonAffiliation)}</span>
-      <span>Version ${esc(cfg.release.version)} (${esc(cfg.release.date)}).. Screenshots show invented demo data.</span>
+      <span>Version ${esc(cfg.release.version)} (${esc(cfg.release.date)}). Screenshots show invented demo data.</span>
     </div>
   </div>
 </footer>`;

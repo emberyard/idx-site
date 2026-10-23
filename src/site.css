@@ -336,3 +336,10 @@ footer.site .legal a{text-decoration:underline;color:var(--muted)}
 .notice-next p{margin:0}
 @media(min-width:62em){.show.wide,.show.wide.flip{grid-template-columns:minmax(0,1fr)}.show.wide .show-text{max-width:46rem;order:0}.show.wide .show-img{order:1}}
 .show.wide .fig{margin:0}
+
+.older{border-top:1px solid var(--border);margin-top:1rem}
+.older>summary{cursor:pointer;list-style:none;padding:1.2rem 0;font-weight:600;color:var(--accent-text);display:flex;gap:.6rem;align-items:center}
+.older>summary::-webkit-details-marker{display:none}
+.older>summary::before{content:"+";font-family:var(--font-mono);font-size:1.3rem;line-height:1}
+.older[open]>summary::before{content:"\2212"}
+.older>summary:focus-visible{outline:2px solid var(--accent-text);outline-offset:3px;border-radius:4px}

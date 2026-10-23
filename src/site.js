@@ -56,4 +56,10 @@
       });
     });
   });
+  // changelog: a link to an older release opens the folded list first
+  var openOlder = function () {
+    var id = decodeURIComponent(location.hash.slice(1)), t = id && d.getElementById(id), o = d.getElementById('older');
+    if (t && o && o.contains(t) && !o.open) { o.open = true; t.scrollIntoView(); }
+  };
+  openOlder(); window.addEventListener('hashchange', openOlder);
 })();

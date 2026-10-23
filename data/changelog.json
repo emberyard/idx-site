@@ -2,6 +2,172 @@
  "source": "packages/protocol/src/changelog.ts",
  "entries": [
   {
+   "version": "0.1.36",
+   "date": "2026-10-22",
+   "headlines": [
+    "Dragging is calm: sidebar rows stay put while a thin line shows where the one you hold will land, and project tabs glide aside smoothly.",
+    "Calmer sidebar and tabs: every project folder is one quiet colour again, and sections, projects and chats are easier to tell apart."
+   ],
+   "new": [
+    "After a restart (an update, quitting, a crash) every project reopens as it was, and a chat that was cut off mid-way is marked \"Interrupted by restart\" with one Continue button. Continue tells it IDX restarted and to check the transcript and the working tree before carrying on; it is sent once. In a terminal chat the note is typed into the CLI after it resumes (Antigravity is only resumed, never typed into).",
+    "Settings ▸ General ▸ \"Auto-continue interrupted work after restart\" (off), with an On / Off choice per project: chats that were working carry on by themselves. A chat waiting for your approval or answer is never continued for you, and a Bypass or Auto chat only when its project is set to On."
+   ],
+   "improved": [
+    "Sidebar drag (projects and chats): no row slides any more. The dragged row is lifted a little and one thin line marks the drop place; the order changes the moment you let go. Queued messages and browser tabs keep their slide.",
+    "Project tabs: the other tabs glide aside quickly while you drag, nothing moves when you pick a tab up, a drop settles without a snap, and Esc (or letting go outside the strip) glides the tab back. Dragging a tab out of the window still opens it in a new window.",
+    "Project folders no longer get a different colour each. Every folder icon is one calm colour; if you want a project to stand out, pick a colour for it in its menu (Project colour…), and Default puts it back. Colours you picked before are kept.",
+    "The sidebar has clearer layers without extra colour: section headers are small capitals, project names are bold, chats hang from a thin line under their project, and sections are divided by a hairline.",
+    "The chat or project you are on, and the project tab in front, are a raised surface that is easy to spot in both themes; hovering a tab highlights the whole tab, close button included, and New chat is set apart from the tabs.",
+    "Small colour fixes: hover in the dark sidebar is visible, status shapes in the light theme are a little stronger, and some grey text is easier to read."
+   ],
+   "fixed": [
+    "A new Claude chat that opens in the terminal no longer starts anything until you press Start (or Enter): opening it creates no chat in the list and no Claude process, like a new chat in the chat view. Leave it and nothing is left behind."
+   ]
+  },
+  {
+   "version": "0.1.35",
+   "date": "2026-10-22",
+   "headlines": [
+    "The sidebar now lists only the projects you have open, in the same order as the tabs, and closing a project is safer and easy to undo. Dragging to reorder is live.",
+    "Chats in the terminal now get your attention: a notification, Dock badge and window count when a chat finishes or needs you."
+   ],
+   "new": [
+    "Settings ▸ General ▸ \"Notify when a chat finishes or needs me\" (on) and \"Play a sound with notifications\" (off). A notification names the chat, appears only for a chat you are not looking at (another chat or project in front, or IDX in the background), and macOS Do Not Disturb silences it. A chat that needs you also bounces the Dock once; a finished reply only badges.",
+    "A finished reply stays marked (a check in the chat list and on the project tab) until you have looked at that chat; the Dock badge and the window title count chats that need you or finished unread, for example \"(2) alpha\". In a terminal scrolled up, a chip says \"Claude is waiting for you\" and the edge pulses once when the chat starts waiting.",
+    "Open project… (the + beside the tabs, ⌘K, or the sidebar) lists your recent projects first. Opening one adds it as a tab and a sidebar entry and brings it to the front."
+   ],
+   "improved": [
+    "Terminal chats react to Claude Code sooner and more reliably: a permission dialog or question counts as soon as Claude Code asks (it used to wait for a later notification), and a prompt you answer by typing goes back to Working at once.",
+    "The sidebar shows only the projects you have open (the same ones, in the same order, as the project tabs). Closing a project removes it from the sidebar; its chats keep running and nothing is deleted. Other projects open from All projects, ⌘K or Open project…. A project that is closed but still working is listed under Running in closed projects, and a chat that needs you stays in Needs you (a click reopens the project).",
+    "Projects you had in the sidebar but not as tabs stay open this once, with a note, so nothing disappears; close the ones you are not using.",
+    "Closing a project: the close button is at the end of the tab with its own space, away from the icon you drag, and shows on hover or for the tab in front. A project with a working or waiting chat asks once before closing (Keep open is the default); otherwise it closes at once and a notice, kept for 8 seconds, has Undo (the project comes back in its place). Close project in the menus is its own group at the end.",
+    "Dragging to reorder is live: the other tabs, projects, chats, queued messages and browser tabs slide out of the way while you drag, the landing spot shows as a gap, a long list scrolls when you hold near its edge, and the dropped item settles into place. With reduced motion they jump instead of sliding."
+   ],
+   "fixed": [
+    "A terminal chat that needed you was never announced while IDX was in front, even when another chat was showing. A finished reply and a prompt right after it no longer swallow each other, and the notification no longer plays a sound unless you turn that on.",
+    "Switching windows no longer marks a waiting terminal chat as seen (the terminal's focus reports counted as typing), and pressing Esc to interrupt Claude no longer leaves the chat showing Working forever.",
+    "Several projects could end up with the same colour (four of five were salmon). A new project now gets the colour least used by your other projects, and keeps it; the colours you picked yourself are never changed.",
+    "The red, amber and pink project colours looked like errors or warnings. Project colours now run from olive to pink, none of them in the red or amber range that means danger."
+   ]
+  },
+  {
+   "version": "0.1.34",
+   "date": "2026-10-21",
+   "headlines": [
+    "Approvals and Quit are safer: a new approval can no longer be answered by a key you typed before it appeared, and Quit warns about chats waiting on you.",
+    "The sidebar is easier to scan: projects, chats and states each look different, and projects keep the order you drag them into, in the sidebar and the tabs alike."
+   ],
+   "improved": [
+    "Sidebar: a project row has its icon in its own colour and a bold name; its chats sit under it, lighter, each starting with its state. States differ by shape, not only colour: a spinner while working, a diamond when it needs you, a check when finished, a cross on an error, an empty ring when stopped.",
+    "The permission mode shows once, as a small badge, only where it differs: on a chat that runs in another mode than its project, or on a project that differs from new chats. Red only for Bypass. It no longer repeats \"Mode: Bypass\" under every chat.",
+    "Chat steps are easier to read: a command step is titled by what it does (\"Encode 720p proxies\"), not by the shell script; the command itself sits behind a Command button with Copy and is never shown twice. A failed step shows its one-line reason under the title, a call that never ran says what went wrong and that Claude retried, and a command started in the background says so instead of \"exit 0\".",
+    "A chat no longer shows its own title again as its preview, every time in the sidebar is the time since the last activity (hover for the date), every section header looks the same, and \"New chat\" appears once (other projects have a + on hover).",
+    "One project order for the sidebar and the project tabs: drag a project in either (or use Move up / down / to top) and the other follows; it is kept after a restart. Other projects ▸ ⋯ ▸ Sort: Recent or Manual. A grip appears on hover to show a project can be dragged.",
+    "Background work: jobs Claude leaves running (an upload, an encode, a dev server) now show at the foot of the chat with their name, how long they have run, their last reported line (and a bar when it reports a percentage), Stop and Open output. Before, they were only a small Running badge in the header, and the status line said just \"Working\".",
+    "Settings ▸ General ▸ Project tabs: turn the tabs at the top off to use the sidebar alone.",
+    "Ages in lists switch from days to months and years after 30 days (a year-old chat no longer reads \"366d\").",
+    "The status line at the foot of a working chat names the step in words: when Claude described a command (\"Encoding proxies\") that sentence shows with the time, instead of the raw shell line, and it says how many jobs run in the background behind it.",
+    "A usage-limit reset more than a week away now names its date, so \"Mon\" on a Monday is no longer ambiguous.",
+    "Project colours are brighter and clearly different from each other in both themes, so a tab icon never looks grey or \"special\" for no reason. Pick one in the project menu (Project colour, or Automatic); it shows on the tab, Home, the sidebar and ⌘K. Hover the icon: it says \"Project colour\" so it is never mistaken for a status.",
+    "The chip at the top of a chat that said \"Tasks · 1\" now says what it counts (\"Running · 2\", or \"Finished · 1\"), explains itself on hover, and opens the list of jobs and sub-agents when clicked.",
+    "Files Claude sends you are easier to read and open: a picture is a readable thumbnail (up to 320 px wide, a tall one shows its top) with its name, size and pixel size; any other file is a card with its kind and size; a file that is gone says so calmly. They sit under the answer text that introduces them. Click opens the file in Details, ⌘-click opens your editor, right-click gives Reveal in Finder and Copy path."
+   ],
+   "fixed": [
+    "Dragging a folder from Finder into the window now opens it as a project wherever you drop it: the project tabs, the top bar, Home, the chat or any empty space (it used to work only on the sidebar and the Projects list). The window shows one highlight while you drag, says \"Opened <name>\", a folder dropped on the message box still attaches and offers \"Open as project\", a file dropped outside the message box says where to drop it, and a missed drop can no longer replace the app with the dropped file. A folder dropped on the Dock icon or opened with Open With also opens as a project.",
+    "A permission or question card that arrives while you type in the message box no longer takes the keyboard: your next Space or Enter stays in the box instead of pressing Allow. Keys 1, 2 and 3 answer only when nothing else has focus, and not in the first moment after a card appears.",
+    "A failed check for updates (for example with no internet) is no longer a permanent message in the sidebar: it is a quiet note in Settings > About that you can dismiss, and the app keeps trying again in the background.",
+    "Quitting or restarting to update used to ignore a chat paused on an approval or a question, and gave up checking after a second and a half and quit anyway. It now lists every chat that is working or waiting for you, Cancel is the default, and if IDX cannot check it asks instead of quitting. An update never restarts the app by itself.",
+    "At most three notifications show at once, newest on top; a repeat of the same message replaces it, and the stack always stops above the message box so Send stays clickable in small windows.",
+    "Settings made in one window (Trust level, Bypass confirmations, per-project choices) are no longer overwritten by another open window. Windows now pick up each other's changes straight away.",
+    "Error notifications stay about 15 seconds, are announced to screen readers, and any notification waits while the pointer or keyboard focus is on it.",
+    "The tip over an answer’s Retry, Copy and Fork buttons no longer covers the answer text: it opens below the row."
+   ]
+  },
+  {
+   "version": "0.1.33",
+   "date": "2026-10-21",
+   "headlines": [
+    "A chat the Claude CLI could not open (\"Session ID is already in use\") no longer dead-ends: it opens, or you can start it over in one click."
+   ],
+   "fixed": [
+    "Opening a chat in the terminal no longer fails with \"Session ID ... is already in use\" when an earlier terminal start left nothing but start-up lines behind. The chat gets a fresh conversation id and keeps its title and settings.",
+    "When the Claude CLI refuses a chat (\"already in use\" or \"No conversation found\"), the terminal shows one line with \"Start this chat over\". Earlier history is not carried over, because the CLI has none to carry. The same action is in the chat menu for a chat with nothing said in it.",
+    "A chat that exists but has no messages now says \"This chat has no messages yet\" instead of \"Start a chat\"."
+   ]
+  },
+  {
+   "version": "0.1.32",
+   "date": "2026-10-21",
+   "headlines": [
+    "A question or approval on a stopped chat can now be answered: one click resumes the chat and sends your answer.",
+    "An old \"Weekly limit reached\" no longer lingers on the new-chat box."
+   ],
+   "fixed": [
+    "The red \"Weekly limit reached\" no longer stays on the new-chat box after your account has answered again. Settings > Diagnostics and the chip tooltip say why a limit is shown.",
+    "Answering a question or approval in a chat that is not running no longer fails with \"Session is not running\". The card says \"Session stopped\", keeps your answer, and \"Resume and send answer\" restarts the chat and sends it as your next message with the question quoted.",
+    "Needs you shows a stopped chat's waiting request as \"Stopped · question waiting\", and its count now matches \"waiting\" under Quick chats.",
+    "Esc now closes the right-click menu in a terminal."
+   ]
+  },
+  {
+   "version": "0.1.31",
+   "date": "2026-10-20",
+   "headlines": [
+    "\"Weekly limit reached\" no longer shows when your account still works.",
+    "Files open one way everywhere: a click shows them in Details, ⌘-click opens your editor."
+   ],
+   "improved": [
+    "Opening a file works the same in the chat, the terminal, the Files list and the diff: a click opens it in Details (at the line when there is one), ⌘-click opens it in your editor, right-click gives Open, Reveal in Finder and Copy path. Settings > General > Open files with swaps the two.",
+    "A picture or file Claude sends is one control that opens in Details. The extra Preview button and the pop-up picture window are gone, and a second click no longer closes it.",
+    "HTML pages and pictures in Details now fill the panel instead of sitting in a small box.",
+    "A file that was moved or deleted shows a calm note with Locate and Copy path instead of an error."
+   ],
+   "fixed": [
+    "\"Weekly limit reached\" (and the red limit chip) showed up when your account was fine. It now shows only when Claude actually refuses a message, clears the moment a newer report says you are fine, a real answer arrives, or the reset time passes, and only for the account and model it is about.",
+    "Getting close to a limit is a calm note on the usage chip (\"85% of this week's limit · resets Sun 3:30 PM\"), never a stop.",
+    "Settings > Diagnostics shows the last limit report Claude sent for each account, so any doubt can be settled at a glance.",
+    "Follow agent in Details is no longer switched on by a stray F key (it is now Option+F) and no longer stays on after a restart.",
+    "In shell mode the note \"The agent reads the output with your next message\" hides when the message box is too narrow for it, so it never sits on top of the account chip."
+   ]
+  },
+  {
+   "version": "0.1.30",
+   "date": "2026-10-19",
+   "headlines": [
+    "Type ! first in the message box to run a command on this Mac, like in the Claude Code CLI."
+   ],
+   "new": [
+    "Shell mode: a ! first in the message box switches it to shell mode (\"Shell · runs on this Mac in <folder>\"). Enter runs the command in the project folder with the same setup as the Terminal tab; the output streams into the chat as a \"You ran\" row with its exit code and time, a Stop button, Copy, and the full text in Details. After a command runs the box goes back to a normal message; type ! again for the next one. Esc, or Backspace on an empty box, leaves shell mode; Ctrl+C on an empty box stops the running command. The agent reads the commands and their output with your next message. It never runs anything the agent suggested, and not while an approval is waiting. Settings ▸ General can turn it off."
+   ],
+   "improved": [
+    "Ctrl+S in the message box stashes your draft (text, shell mode and attachments) and clears the box; on an empty box it brings the newest stash back, like the Claude Code CLI. A quiet line above the box shows what is stashed, with Bring back and Drop.",
+    "Ctrl+G opens your draft in the editor chosen in Settings and takes the text back each time you save the file; Done ends it. Option+P opens the model list.",
+    "Up and Ctrl+R in the message box also bring back the commands you ran with !, in shell mode."
+   ]
+  },
+  {
+   "version": "0.1.29",
+   "date": "2026-10-19",
+   "headlines": [
+    "The message box keeps more of the Claude Code habits: Up recalls your prompts from every chat of the project, and Shift+Tab changes the mode.",
+    "A long paste shows as a Pasted text chip in your message too, and the chat always says what it is doing right now."
+   ],
+   "improved": [
+    "Chat > Previous Prompt and Next Prompt (Control-Command-Up and Down) walk your own prompts in a long chat; past the last one you land at the end of the chat.",
+    "Ctrl+R in the message box searches your earlier prompts, like the Claude Code CLI: type to filter, Up and Down to choose, Enter puts one in the box (it never sends), Esc keeps what you had.",
+    "Shift+Tab in the message box cycles the mode (Ask first, Accept edits, Plan only) like the Claude Code CLI. Esc twice or Ctrl+C clears what you typed, and Up brings it back; Ctrl+C on an empty box while a turn runs asks to stop.",
+    "Up in the message box recalls your earlier prompts from every chat of the project, not only this one, like the Claude Code CLI. A new chat has them too. One press steps one prompt (a two-line prompt takes one extra press to cross its lines).",
+    "A long paste is a \"Pasted text · N lines\" chip in the message box and in the sent message: open it in place, copy the full text, remove it with one click or Backspace. The agent still gets every line.",
+    "File chips in the message box show their size and type, and open in Finder. A long prompt read back from a terminal chat folds to its first lines with Show all.",
+    "One status line at the bottom of the chat says what is happening now: \"Working · Bash npm test · 42s\", \"Waiting for 3 agents\", \"Sent · waiting for the model\", or that a background task is still running. It is there only while something is happening.",
+    "While a sub-agent runs, its step shows as a chip right in the chat, so you see what it is doing without opening Details.",
+    "After 15 seconds without output it says when the last output was; after 90 seconds it says \"No output for 1m 30s, still working\" and shows Stop."
+   ],
+   "fixed": [
+    "Sending a message while you are scrolled up in a long chat now takes you to the bottom, so your message and the answer are on screen."
+   ]
+  },
+  {
    "version": "0.1.28",
    "date": "2026-10-19",
    "headlines": [
