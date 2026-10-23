@@ -17,8 +17,9 @@ export function privacy(c) {
         <li>No ${esc(N)} account, no sign-up, no analytics, no telemetry.</li>
         <li>Projects, windows and settings live in one local database on your Mac.</li>
         <li>${esc(N)} runs your own Claude Code or Gemini CLI. They send your prompts and the files they read to their provider, under their own policies, exactly as they do in a terminal.</li>
-        <li>${esc(N)} never reads, stores or sends your Anthropic or Google credentials. You sign in to each CLI yourself.</li>
-        <li>The only thing ${esc(N)} itself fetches is the update feed, which tells GitHub your IP address, as any download does.</li>
+        <li>You sign in to each CLI yourself. ${esc(N)} does not open their login files or Keychain entries.</li>
+        <li>API keys and tokens you save in ${esc(N)} are stored on your Mac, encrypted, and handed only to the CLI you start with that account. See Keys and sign-ins below.</li>
+        <li>Apart from your CLIs, ${esc(N)} itself connects to the update feed on GitHub (which sees your IP address, as any download does), to pages you open in its Browser panel, and to your own endpoint if you press Check on a custom endpoint account.</li>
         <li>Diagnostics are local only. Report an issue sends only what you choose to send.</li>
       </ul>
     </div>
@@ -27,6 +28,16 @@ export function privacy(c) {
 
   <h2 style="margin-top:4rem;font-size:1.6rem">Where your data is</h2>
   <p class="muted" style="max-width:46rem">One folder under <code>~/Library/Application Support</code> holds ${esc(N)}’s database (projects, chats index, windows, settings), local logs, sandbox folders and pasted images. It is private to your user account. Your conversation transcripts are written by your CLI into its own folders, for Claude Code under <code>~/.claude</code>. Delete the ${esc(N)} folder and it forgets everything. Settings > Data and privacy has Remove all data, and the Help menu has Uninstall.</p>
+
+  <h2 style="margin-top:3rem;font-size:1.6rem">Keys and sign-ins</h2>
+  <ul class="ticks" style="max-width:46rem">
+    <li><b>Saved keys.</b> A key or token you type into ${esc(N)} (an API key, cloud keys, a custom endpoint token, extra variables) is encrypted with AES-256-GCM and stored in ${esc(N)}’s database on your Mac. The encryption key is protected by the macOS Keychain and kept, in that protected form, in an owner-only file in the ${esc(N)} folder. If the Keychain is unavailable, ${esc(N)} refuses to save rather than store the key readable. Reset saved keys… in Settings deletes them all. Settings show only a masked hint.</li>
+    <li><b>Where a saved key goes.</b> Into the environment of the CLI you start with that account, on your Mac. ${esc(N)} sends it nowhere itself. The one exception is Check on a custom endpoint account, which sends that account’s token to the address you entered, when you press it. The CLI then sends it to its provider, as it does in a terminal.</li>
+    <li><b>Sign-ins.</b> Claude Code, Gemini CLI, Antigravity, Grok Build and Cursor CLI each keep their own login. ${esc(N)} does not open those files or Keychain entries. It only checks that Grok’s <code>auth.json</code> exists, runs <code>claude auth status</code> and <code>cursor-agent status</code>, and reads the account email that Gemini CLI caches. A Gemini Google sign-in added in ${esc(N)} is kept by Gemini CLI in a file in that account’s ${esc(N)} folder, not in the Keychain.</li>
+    <li><b>Grok (xAI) and Cursor (Anysphere).</b> ${esc(N)} never starts their sign-in. It keeps <code>XAI_API_KEY</code> or <code>CURSOR_API_KEY</code> only if you save it as an account variable, as above. For Grok chats it switches off Grok’s telemetry and trace upload; Grok’s own privacy settings still apply. What Grok and Cursor send is up to xAI and Anysphere.</li>
+    <li><b>Your environment.</b> Your CLIs start with your Mac’s login environment, so a key you export in your shell reaches them, as it does in a terminal.</li>
+    <li><b>Logs and reports.</b> Keys are scrubbed from logs and reports by pattern. That is a safety net, not a guarantee: read the preview before you send a report.</li>
+  </ul>
 
   <h2 style="margin-top:3rem;font-size:1.6rem">What it asks your Mac for</h2>
   <p class="muted" style="max-width:46rem">${esc(N)} does not ask for Screen Recording, Camera, Microphone or Accessibility. If your agents need to read protected folders such as Documents or Downloads, macOS may ask about Full Disk Access; a short guide in Settings explains what it does and how to grant it. It is optional.</p>
