@@ -11,7 +11,7 @@ import cfg from '../site.config.mjs';
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const N = cfg.brand.name;
 const VARIANTS = {
-  default: [cfg.brand.tagline, 'One window per project, over your own Claude Code and Gemini CLI.'],
+  default: [cfg.brand.tagline, 'One window per project, over the coding CLIs you already use.'],
   features: ['Everything it does, in plain words.', 'Projects, chats, terminals, approvals, permissions, panels, archive.'],
   privacy: ['Your data stays on your Mac.', 'No account, no analytics, no telemetry.'],
   support: ['Claude Code and Gemini CLI, and what is not covered yet.', 'An honest support list.'],

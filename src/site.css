@@ -343,3 +343,14 @@ footer.site .legal a{text-decoration:underline;color:var(--muted)}
 .older>summary::before{content:"+";font-family:var(--font-mono);font-size:1.3rem;line-height:1}
 .older[open]>summary::before{content:"\2212"}
 .older>summary:focus-visible{outline:2px solid var(--accent-text);outline-offset:3px;border-radius:4px}
+/* Five CLIs: start order and per-CLI cards (IDX-481) */
+.cli-flow{list-style:none;padding:0;margin:0 0 1.75rem;display:grid;gap:.75rem;grid-template-columns:1fr}
+@media(min-width:42em){.cli-flow{grid-template-columns:repeat(4,1fr)}}
+.cli-flow li{position:relative;display:grid;grid-template-columns:auto 1fr;column-gap:.7rem;align-items:baseline;background:var(--surface2);border:1px solid var(--border);border-radius:12px;padding:.85rem 1rem}
+.cli-flow .num{grid-row:span 2;width:1.5rem;height:1.5rem;border-radius:50%;background:var(--accent);color:var(--on-accent);font:700 .75rem/1.5rem var(--font-mono);text-align:center;align-self:start}
+.cli-flow b{font-size:1.02rem}.cli-flow small{color:var(--muted);font-size:.86rem;line-height:1.35}
+@media(min-width:42em){.cli-flow li:not(:last-child)::after{content:"";position:absolute;right:-.62rem;top:50%;width:.5rem;height:.5rem;border-top:2px solid var(--faint);border-right:2px solid var(--faint);transform:translateY(-50%) rotate(45deg)}}
+.clis{display:grid;gap:1.25rem;grid-template-columns:repeat(auto-fit,minmax(min(100%,13.5rem),1fr))}
+.clis .card ul{padding-left:1.1rem;margin:.6rem 0 0;color:var(--muted);font-size:.93rem}.clis .card li{margin:.3rem 0}
+.depth{display:inline-block;font-family:var(--font-mono);font-size:.78rem;text-transform:uppercase;letter-spacing:.06em;color:var(--accent-text);border:1px solid var(--accent);border-radius:99px;padding:.1rem .55rem;margin:0 0 .7rem}
+.depth.term{color:var(--muted);border-color:var(--border)}
