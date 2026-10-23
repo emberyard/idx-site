@@ -2,6 +2,66 @@
  "source": "packages/protocol/src/changelog.ts",
  "entries": [
   {
+   "version": "0.1.39",
+   "date": "2026-10-23",
+   "headlines": [
+    "The message box now starts with the CLI you want (Claude, Gemini, Antigravity, Grok or Cursor), and switching keeps what it can and tells you what it changed.",
+    "One \"Auto\" everywhere, one wording per action, and Archive and Projects fit narrow windows."
+   ],
+   "new": [
+    "The CLI is the first choice in the message box. It becomes read-only once you send, so a started chat never changes CLI by accident.",
+    "Settings has a \"New chats start with\" choice, and a project can pin its own CLI.",
+    "Grok, Cursor and Gemini chats get the Chat | Terminal switch, like Claude chats.",
+    "Small CLI marks on chat lists show which CLI each chat uses."
+   ],
+   "improved": [
+    "Switching CLI keeps your model and mode when the new CLI supports them, otherwise picks the safer one and says what it changed.",
+    "Each CLI remembers its own model and mode.",
+    "One \"Auto\" label everywhere. Cursor models are grouped Included in your plan or Billed per token, and a billed model asks once per project before it is used.",
+    "Clear \"missing\" and \"signed out\" notices for all five CLIs, with what to run. IDX still never signs in for you.",
+    "The New chat in terminal card (⌥⌘T) only offers CLIs that can start a terminal chat.",
+    "One wording per action across menus and buttons.",
+    "Archive and Projects fit any window width."
+   ]
+  },
+  {
+   "version": "0.1.38",
+   "date": "2026-10-23",
+   "headlines": [
+    "Grok and Cursor can now be chosen as the agent for a chat, next to Claude and Gemini.",
+    "Grok chats start lean by default, and the model menu marks Cursor models as Included or Billed per token."
+   ],
+   "new": [
+    "Grok and Cursor are chat agents next to Claude and Gemini: pick one when you start a chat. They need the Grok or Cursor command-line tool installed and signed in; IDX never signs in for you and tells you what to run if one is missing.",
+    "Grok chats show their cost and how full the conversation is."
+   ],
+   "improved": [
+    "Grok chats start lean by default, without your Claude Code setup. A Settings toggle brings your Claude Code setup back.",
+    "The Cursor model menu marks every model as Included in your plan or Billed per token, so a paid model is never picked by surprise.",
+    "Your chats and accounts are moved to the new format automatically the first time you open this version. Nothing is lost."
+   ]
+  },
+  {
+   "version": "0.1.37",
+   "date": "2026-10-23",
+   "headlines": [
+    "A new Projects page lists all your projects in one place, and New chat is now just the message box with an \"In:\" choice.",
+    "The same words everywhere (Chat, Projects, Archive, Bypass), ⌘T opens the kind of tab you are in, and a garbled terminal now repairs itself."
+   ],
+   "new": [
+    "Projects page (⌘0 or ⌘⇧H): every project in one table with its state, path, chats, last activity and window, plus search, sorting, a \"Chats with no project\" tab, and Open / open in window / pin on each row. Up, Down and Enter move through it.",
+    "Redraw terminal button in the terminal toolbar and the command palette, for the rare time the text looks scrambled."
+   ],
+   "improved": [
+    "New chat (⌘N) is the message box with an \"In:\" row where you pick No project or an open project. Nothing is created until you send the first message. Inside a project window it stays that project's blank chat.",
+    "The old Home page is gone: the Projects page takes its place, and the extra project rows in the sidebar are removed.",
+    "One name per idea across the app: Chat, Projects, Archive and Bypass are used everywhere, so the same thing never has two names.",
+    "Archive is a clean one-line table (Name, Kind, Project, Archived, by) with Restore and a ⋯ menu on every row; Delete explains why when it is blocked. Pages use the full width on big displays.",
+    "⌘T makes a new item of the kind you are in: a terminal tab from a terminal, a Browser tab from the browser, otherwise a new chat.",
+    "A terminal whose text turns scrambled or overstruck repairs itself when you come back to the window, wake the Mac or move to another display."
+   ]
+  },
+  {
    "version": "0.1.36",
    "date": "2026-10-22",
    "headlines": [

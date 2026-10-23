@@ -15,7 +15,7 @@ export default {
     tagline: 'A cockpit for your AI coding agents.',
     // The one-line statement (used for meta descriptions and the share text).
     statement:
-      'A Mac app that gives each project its own window over your own Claude Code and Gemini CLI. Chats, terminal and files stay together, and everything comes back after a restart.',
+      'A Mac app that gives each project its own window over the coding CLIs you already use: Claude Code, Gemini CLI, Antigravity, Grok Build and Cursor CLI. Chats, terminal and files stay together, and everything comes back after a restart.',
     // Published at https://emberyard.github.io/idx-site/ (builds set SITE_ORIGIN and SITE_BASE). No custom domain yet.
     domain: 'emberyard.github.io',
     // Contact. Leave empty until an address exists; pages then say contact details arrive with the launch.
@@ -46,5 +46,5 @@ export default {
   },
 
   nonAffiliation:
-    'is an independent project. It is not made by, or affiliated with, Anthropic or Google. Claude and Gemini are their owners’ trademarks.',
+    'is an independent project. It is not made by, or affiliated with, Anthropic, Google, xAI or Anysphere. Claude, Gemini, Antigravity, Grok and Cursor are their owners’ trademarks.',
 };

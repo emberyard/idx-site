@@ -3,6 +3,8 @@ import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { esc } from '../lib.mjs';
 
+// The app version the screenshots in public/img were captured from (IDX-436). Update when they are recaptured.
+const SHOTS_VERSION = '0.1.36';
 const siteRoot = join(dirname(fileURLToPath(import.meta.url)), '..', '..');
 const latestChanges = (cur, n = 3) => {
   try {
@@ -71,7 +73,7 @@ const tour = (c) => {
   const { N } = c;
   return [
     { tab: 'Windows', t: 'One window per project. Or a few, together.', p: `Each project gets its own window with its chats, terminal, files and changes. Group related projects as tabs, or give each one a display. Windows come back where you left them.`, shot: 'home', alt: `The top left of a ${N} window: project tabs along the top, and a sidebar that lists only the open projects with their chats and status.`, marks: [] },
-    { tab: 'Chat and terminal', t: 'Read it as a chat. Flip it to the real terminal.', p: `Your Claude Code or Gemini CLI conversation shows as a clean chat: the plan, each step, inline diffs. One click flips the same conversation to the real terminal. Nothing is hidden behind either view.`, shot: 'project', alt: `A chat in ${N} about adding rate limiting: steps folded into one line each, a Write with its diff, the answer and a list of changed files.`, marks: [] },
+    { tab: 'Chat and terminal', t: 'Read it as a chat. Flip it to the real terminal.', p: `A Claude Code, Gemini, Grok or Cursor conversation shows as a clean chat: the plan, each step, inline diffs. One click flips the same conversation to the real terminal. Nothing is hidden behind either view.`, shot: 'project', alt: `A chat in ${N} about adding rate limiting: steps folded into one line each, a Write with its diff, the answer and a list of changed files.`, marks: [] },
     { tab: 'Needs you', t: 'It speaks up only when an agent truly asks.', p: `A permission or a question marks its chat in amber, adds a Dock badge and a notification. Answer with ${c.kbd('1')} ${c.kbd('2')} ${c.kbd('3')}, or jump to the next chat that is waiting with ${c.kbd('⇧', '⌘', 'U')}. Finished work stays quiet.`, shot: 'needs', alt: `A permission card: Allow Bash? with the exact psql command and buttons Allow once, Always allow, Deny.`, marks: [] },
     { tab: 'Switcher', t: 'Any project or chat in a second.', p: `${c.kbd('⌘', 'P')} opens the switcher. Results show their folder, so two projects with the same name never get confused. ${c.kbd('⌘', 'K')} is the command palette, which also searches messages and archived chats.`, shot: 'switcher', alt: `The command palette over a dimmed ${N} window: projects, then chats, each with its folder.`, marks: [] },
     { tab: 'Trust', t: 'Choose how careful it is, per project.', p: `Careful, balanced or full access. Balanced is the default: file edits inside the project go through, commands and anything outside it ask first. Full access asks you to confirm and says plainly what it means.`, shot: 'trust', alt: `The Trust and permissions settings: a Trust level control with Careful, Balanced and Full access, and the default permission mode.`, marks: [] },
@@ -93,7 +95,7 @@ const showcase = (c) => {
   return `
 <section id="cockpit">
   <div class="wrap">
-    <div class="sec-head"><p class="eyebrow">The cockpit</p><h2>Built for people who live in their agents all day.</h2><p>Real screens from the current build, with invented demo data.</p></div>
+    <div class="sec-head"><p class="eyebrow">The cockpit</p><h2>Built for people who live in their agents all day.</h2><p>Real screens from v${SHOTS_VERSION}, with invented demo data.</p></div>
     ${rows.map((r, i) => `<article class="show${i % 2 ? ' flip' : ''}${r.wide ? ' wide' : ''}" id="${r.id}">
       <div class="show-text"><p class="eyebrow">${esc(r.eyebrow)}</p><h3>${r.t}</h3><p class="muted">${r.p}</p>
         ${r.keys ? `<p class="keys">${r.keys.map(([k, l]) => `<span>${k} ${esc(l)}</span>`).join('')}</p>` : ''}
@@ -116,15 +118,15 @@ export function home(c) {
   <div class="wrap">
     <p class="eyebrow">For people who run AI coding agents on many projects</p>
     <div class="hero-copy"><h1>${esc(B.tagline)}</h1>
-    <div><p class="lede">${esc(N)} gives every project its own window on your Mac, over your own Claude Code and Gemini CLI. Its chats, terminal, files and changes stay together. Restart, and it all comes back.</p>
+    <div><p class="lede">${esc(N)} gives every project its own window on your Mac, over the coding CLIs you already use: Claude Code, Gemini CLI, Antigravity, Grok Build and Cursor CLI. Chats, terminal, files and changes stay together. Restart, and it all comes back.</p>
     <div class="btn-row">
       <a class="btn primary" href="${dl.href}">${esc(dl.label)}</a>
       <a class="btn" href="#cockpit">See the cockpit</a>
     </div></div></div>
-    <p class="smallprint">Private beta, by invitation. Mac only (${esc(rel.chip)}, macOS ${esc(rel.minMacOS)} or newer). Needs Claude Code or Gemini CLI. ${esc(N)} is a working name and may change.</p>
+    <p class="smallprint">Private beta, by invitation. Mac only (${esc(rel.chip)}, macOS ${esc(rel.minMacOS)} or newer). Uses your own CLIs, installed and signed in by you. ${esc(N)} is a working name and may change.</p>
   </div>
   <div class="wrap wide hero-stage">
-    ${shot('hero', { eager: true, mobile: 'hero-m', sizes: '(min-width: 120rem) 120rem, 100vw', alt: `A ${N} window at 4K: a sidebar of projects and chats on the left, a chat in the middle with folded steps, an open diff and the changed files, and the right panel with Files, Browser, Diff, Terminal and Details tabs.`, marks: [[50.7, 2.2, 'Project tabs: one project per tab or window'], [14.6, 31.5, 'Every project and its chats, with status'], [59.6, 5.7, 'Chat or Terminal: the same conversation'], [59.6, 31.5, 'Every step is a row you can open'], [68.9, 5.7, 'Files, Diff, Terminal and Details beside the chat']], caption: 'Real screenshot of the current build at 2560 x 1440, invented demo data.' })}
+    ${shot('hero', { eager: true, mobile: 'hero-m', sizes: '(min-width: 120rem) 120rem, 100vw', alt: `A ${N} window at 4K: a sidebar of projects and chats on the left, a chat in the middle with folded steps, an open diff and the changed files, and the right panel with Files, Browser, Diff, Terminal and Details tabs.`, marks: [[50.7, 2.2, 'Project tabs: one project per tab or window'], [14.6, 31.5, 'Every project and its chats, with status'], [59.6, 5.7, 'Chat or Terminal: the same conversation'], [59.6, 31.5, 'Every step is a row you can open'], [68.9, 5.7, 'Files, Diff, Terminal and Details beside the chat']], caption: `Real screenshot of v${SHOTS_VERSION} at 2560 x 1440, invented demo data.` })}
   </div>
 </section>`;
 
@@ -160,10 +162,10 @@ export function home(c) {
     <div class="sec-head"><p class="eyebrow">How it works</p><h2>Three steps, and no new way of working.</h2></div>
     <div class="grid c3">
       <div class="card"><span class="num">1</span><h3>Open a project</h3><p>It gets its own window. Its chats, terminal, files and changes are inside.</p></div>
-      <div class="card"><span class="num">2</span><h3>Work as you do now</h3><p>Chat with Claude Code or Gemini CLI. Flip to the real terminal on the same conversation any time.</p></div>
+      <div class="card"><span class="num">2</span><h3>Work as you do now</h3><p>Pick a CLI and chat. Flip to the real terminal on the same conversation any time.</p></div>
       <div class="card"><span class="num">3</span><h3>Walk away</h3><p>${esc(N)} only calls you when an agent truly needs you. Quit, restart, come back. Everything is where you left it.</p></div>
     </div>
-    <p class="muted" style="margin-top:1.5rem;max-width:46rem">${esc(N)} runs your own Claude Code and Gemini CLI. It does not sell you a model, and it never touches your sign-in.</p>
+    <p class="muted" style="margin-top:1.5rem;max-width:46rem">${esc(N)} runs your own CLIs. It does not sell you a model, and it never signs in for you.</p>
   </div>
 </section>`;
 
@@ -180,7 +182,7 @@ export function home(c) {
   const tourHtml = `
 <section class="band tour" id="tour" data-tour>
   <div class="wrap">
-    <div class="sec-head"><p class="eyebrow">The product, up close</p><h2>Real screens from the current version.</h2><p>Screenshots are from version ${esc(rel.version)} with invented demo data. Dark and light are both real.</p></div>
+    <div class="sec-head"><p class="eyebrow">The product, up close</p><h2>Real screens, not mock-ups.</h2><p>Screenshots are from version ${SHOTS_VERSION} with invented demo data. Dark and light are both real.</p></div>
     <div class="tabs" role="tablist" aria-label="Product tour">${T.map((t, i) => `<button role="tab" type="button" id="tab-${i}" aria-controls="tp-${i}" aria-selected="${i === 0}">${esc(t.tab)}</button>`).join('')}</div>
     ${T.map((t, i) => `<div class="panel" role="tabpanel" id="tp-${i}" aria-labelledby="tab-${i}">
       <div><h3>${t.t}</h3><p class="muted">${t.p}</p><p><a href="${url('features/')}">All features</a></p></div>
@@ -189,15 +191,39 @@ export function home(c) {
   </div>
 </section>`;
 
+  const clis = [
+    { n: 'Claude Code', d: 'Deepest', p: 'Chat, plans, approvals, sub-agents, background commands, rewind and fork. Runs through Claude Code’s own SDK.', l: ['Chat | Terminal on the same conversation', 'Phone access per chat, off until you turn it on'] },
+    { n: 'Gemini CLI', d: 'Chat and terminal', p: 'Chat view over Gemini CLI’s agent protocol, for API-key, paid and company plans.', l: ['Chat | Terminal on the same conversation', 'Thinner than Claude support today'] },
+    { n: 'Grok Build', d: 'Chat and terminal', p: 'Grok chats show their cost and how full the conversation is.', l: ['Starts lean by default, without your Claude Code setup', 'Chat | Terminal on the same conversation'] },
+    { n: 'Cursor CLI', d: 'Chat and terminal', p: 'Every model is marked Included in your plan or Billed per token.', l: ['A billed model asks once per project before it is used', 'Chat | Terminal on the same conversation'] },
+    { n: 'Antigravity', d: 'Terminal only', p: `Opens as a terminal tab you type into, nothing more. ${esc(N)} never scripts it and never switches its accounts.`, l: ['Google’s FAQ does not support wrapping it in other apps on consumer plans'] },
+  ];
+  const diff = [
+    ['CLI first, every time', 'A new chat starts with the CLI, then its model and mode. Once you send, the CLI is locked, so a chat never changes CLI by accident.'],
+    ['Switching says what changed', 'Change CLI before the first message. Your model and mode carry over where the new CLI supports them; otherwise the safer choice is picked and you are told.'],
+    ['Each CLI remembers its own', 'Model and mode are kept per CLI. Choose which CLI new chats start with, and let a project pin its own.'],
+    ['Chat or real terminal', `The same conversation as a chat or in the real CLI, for Claude, Gemini, Grok and Cursor. ${kbd('⌥', '⌘', 'T')} starts a new chat straight in the terminal.`],
+    ['No billing surprises', 'Paid-per-token Cursor models are labelled and confirmed once per project. Accounts that bill per use are marked and never picked for you.'],
+    ['Never signs in for you', 'A missing or signed-out CLI gets a plain notice with the command to run. You sign in yourself, in your own terminal.'],
+  ];
   const tools = `
 <section id="tools">
   <div class="wrap">
-    <div class="sec-head"><p class="eyebrow">Your tools, not ours</p><h2>It sits on top of Claude Code and Gemini CLI.</h2><p>${esc(N)} ships neither and never handles your sign-in. Your usage is billed by each provider to your own account. Google’s Antigravity opens as a plain terminal tab.</p></div>
-    <div class="tools">
-      <div class="card"><h3>Claude Code</h3><p class="muted">The deepest support. Chat, plans, approvals, subagents, background commands, files, rewind and fork.</p><ul><li>Works through Claude Code’s own SDK</li><li>Some newer Claude Code features are terminal only for now</li></ul></div>
-      <div class="card"><h3>Gemini CLI</h3><p class="muted">Chat view for Gemini CLI on an API key, a paid plan or a company plan. Thinner than Claude support today.</p><ul><li>The terminal is always there as a fallback</li><li>Free personal sign-in ended in the CLI on 18 June 2026</li></ul></div>
-    </div>
-    <p style="margin-top:1.5rem"><a href="${url('claude-and-gemini/')}">What is supported and what is not yet</a></p>
+    <div class="sec-head"><p class="eyebrow">Your tools, not ours</p><h2>Five coding CLIs, one window.</h2><p>${esc(N)} ships none of them and never handles your sign-in. Each provider bills your own account. Support differs by CLI, as below.</p></div>
+    <ol class="cli-flow" aria-label="How a new chat starts">
+      <li><span class="num">1</span><b>CLI</b><small>Claude, Gemini, Antigravity, Grok or Cursor</small></li>
+      <li><span class="num">2</span><b>Model</b><small>Remembered per CLI</small></li>
+      <li><span class="num">3</span><b>Mode</b><small>Remembered per CLI</small></li>
+      <li><span class="num">4</span><b>Send</b><small>Now the CLI is locked for this chat</small></li>
+    </ol>
+    <div class="clis">${clis.map((x) => `<div class="card"><p class="depth${x.d === 'Terminal only' ? ' term' : ''}">${esc(x.d)}</p><h3>${esc(x.n)}</h3><p class="muted">${x.p}</p><ul>${x.l.map((i) => `<li>${esc(i)}</li>`).join('')}</ul></div>`).join('')}</div>
+    <p style="margin-top:1.5rem"><a href="${url('claude-and-gemini/')}">Claude Code and Gemini CLI support, item by item</a></p>
+  </div>
+</section>
+<section class="band" id="different">
+  <div class="wrap">
+    <div class="sec-head"><p class="eyebrow">What makes it different</p><h2>One way to start a chat, whichever CLI you pick.</h2><p>New in v0.1.38 and v0.1.39.</p></div>
+    <div class="grid c3">${diff.map(([t, p]) => `<div class="card"><h3>${esc(t)}</h3><p class="muted">${p}</p></div>`).join('')}</div>
   </div>
 </section>`;
 
@@ -221,14 +247,15 @@ export function home(c) {
     <div class="grid c2">
       <ul class="dashes" style="margin:0">
         <li>Mac only, Apple Silicon. No Windows or Linux.</li>
-        <li>You need Claude Code or Gemini CLI installed and signed in.</li>
+        <li>You install and sign in to each CLI yourself.</li>
         <li>Version 0.x. It moves fast and some corners are rough.</li>
         <li>Not yet my only daily tool. I am moving my real projects over now.</li>
       </ul>
       <ul class="dashes" style="margin:0">
         <li>Files are read-only: you can read them and see changes, not edit.</li>
         <li>No search across a whole project yet.</li>
-        <li>Gemini support is thinner than Claude support.</li>
+        <li>Claude Code support is the deepest. Gemini, Grok and Cursor chats do less, and Antigravity is terminal only.</li>
+        <li>Grok and Cursor turns typed in the terminal are not shown back in the chat view.</li>
         <li>No Slack or email alerts when you are away. The name is not final.</li>
       </ul>
     </div>
@@ -240,7 +267,7 @@ export function home(c) {
   <div class="wrap">
     <div class="grid c2" style="align-items:center">
       <div><p class="eyebrow">Privacy</p><h2>Your data stays on your Mac.</h2></div>
-      <div><p class="muted">No account, no sign-up, no analytics, no telemetry. Projects and settings live in one local database. Only your own Claude Code or Gemini CLI talks to its provider, as it already does. <a href="${url('privacy/')}">Read the privacy and security note</a>.</p></div>
+      <div><p class="muted">No account, no sign-up, no analytics, no telemetry. Projects and settings live in one local database. Only your own CLIs talk to their providers, as they already do. <a href="${url('privacy/')}">Read the privacy and security note</a>.</p></div>
     </div>
   </div>
 </section>`;
@@ -261,12 +288,12 @@ export function home(c) {
         <li>Platform <b>macOS ${esc(rel.minMacOS)}+, ${esc(rel.chip)}</b></li>
         <li>Download size <b>about ${rel.sizeMB} MB</b></li>
         <li>Signed and notarized <b>Yes, and it updates itself</b></li>
-        <li>Needs <b>Claude Code or Gemini CLI</b></li>
+        <li>Needs <b>Your own CLIs, signed in</b></li>
       </ul>
     </div>
   </div>
 </section>`;
 
   const ld = `<script type="application/ld+json">${JSON.stringify({ '@context': 'https://schema.org', '@type': 'SoftwareApplication', name: N, applicationCategory: 'DeveloperApplication', operatingSystem: `macOS ${rel.minMacOS}+`, description: B.statement, softwareVersion: rel.version })}</script>`;
-  return { body: hero + showcaseHtml + whatsNew + problem + how + painsHtml + tourHtml + tools + proof + limits + privacy + accessHtml, head: ld };
+  return { body: hero + tools + showcaseHtml + whatsNew + problem + how + painsHtml + tourHtml + proof + limits + privacy + accessHtml, head: ld };
 }
