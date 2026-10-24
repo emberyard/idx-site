@@ -7,7 +7,7 @@
  },
  "legal-third-party-notices": {
   "title": "Third-party notices",
-  "description": "Third-party notices for IDX, a private-beta Mac app for Claude Code and Gemini CLI. Draft text, pending review.",
+  "description": "Third-party notices for IDX, a private-beta Mac app for Claude Code, Gemini CLI, Antigravity, Grok Build and Cursor CLI. Draft text, pending review.",
   "og": "default",
   "path": "legal/third-party-notices/"
  }

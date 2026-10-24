@@ -2,6 +2,16 @@
  "source": "github.com/emberyard/idx-releases releases",
  "releases": [
   {
+   "version": "0.1.41",
+   "published": "2026-10-24T00:23:13Z",
+   "dmgBytes": 143590292
+  },
+  {
+   "version": "0.1.40",
+   "published": "2026-10-23T16:55:51Z",
+   "dmgBytes": 143573829
+  },
+  {
    "version": "0.1.39",
    "published": "2026-10-23T13:44:06Z",
    "dmgBytes": 143531179

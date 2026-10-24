@@ -27,7 +27,7 @@ writeFileSync(join(out, 'assets', 'site.js'), js);
 const hash = (s) => createHash('sha1').update(s).digest('hex').slice(0, 8);
 
 const mark = `<svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><rect x="1.5" y="1.5" width="29" height="29" rx="8" fill="var(--accent)"/><rect x="7" y="8" width="18" height="16" rx="2.5" fill="none" stroke="var(--on-accent)" stroke-width="2"/><path d="M14.5 8v16" stroke="var(--on-accent)" stroke-width="2"/></svg>`;
-const NAV = [['features/', 'Features'], ['claude-and-gemini/', 'Claude + Gemini'], ['who-its-for/', 'Who it is for'], ['faq/', 'FAQ'], ['changelog/', 'What’s new'], ['privacy/', 'Privacy']];
+const NAV = [['features/', 'Features'], ['claude-and-gemini/', 'Supported CLIs'], ['who-its-for/', 'Who it is for'], ['faq/', 'FAQ'], ['changelog/', 'What’s new'], ['privacy/', 'Privacy']];
 const links = (list) => list.map(([p, t]) => `<a href="${url(p)}">${esc(t)}</a>`).join('');
 const header = `<header class="site-header">
   <div class="wrap wide bar">
@@ -44,7 +44,7 @@ const footer = `<footer class="site">
   <div class="wrap wide">
     <div class="cols">
       <div><a class="brand" href="${url('')}">${mark}<span>${esc(N)}</span></a><p style="margin-top:.8rem;max-width:24rem">${esc(B.tagline)} Private beta, Mac only.</p></div>
-      <div><p class="foot-h">Product</p><ul><li><a href="${url('features/')}">Features</a></li><li><a href="${url('claude-and-gemini/')}">Claude + Gemini</a></li><li><a href="${url('who-its-for/')}">Who it is for</a></li><li><a href="${url('changelog/')}">What’s new</a></li></ul></div>
+      <div><p class="foot-h">Product</p><ul><li><a href="${url('features/')}">Features</a></li><li><a href="${url('claude-and-gemini/')}">Supported CLIs</a></li><li><a href="${url('who-its-for/')}">Who it is for</a></li><li><a href="${url('changelog/')}">What’s new</a></li></ul></div>
       <div><p class="foot-h">Learn</p><ul><li><a href="${url('faq/')}">FAQ</a></li><li><a href="${url('privacy/')}">Privacy and security</a></li></ul></div>
       <div><p class="foot-h">Legal</p><ul><li><a href="${url('legal/third-party-notices/')}">Third-party notices</a></li><li>Contact: ${c.mail()}</li></ul></div>
     </div>

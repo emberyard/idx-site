@@ -44,7 +44,7 @@ export const groups = (c) => {
       id: 'claude', title: 'Claude Code support',
       intro: 'The deepest integration. The full list, including what is not yet done, is on its own page.',
       items: [
-        { t: 'Your own Claude Code, through its SDK', p: `${N} runs the Claude Code you already installed and signed in to. Plans with approval, questions answered as choices, subagents as live cards with Stop, background commands in a Running tray, a context meter with Compact now, rewind and fork.`, why: 'Same tool, better desk. Nothing about your setup changes.', link: ['claude-and-gemini/', 'See exactly what is supported'] },
+        { t: 'Your own Claude Code, through its SDK', p: `${N} runs the Claude Code you already installed and signed in to. Plans with approval, questions answered as choices, subagents as live cards with Stop, background commands in a Running tray, a context meter with Compact now, rewind and fork.`, why: 'Same tool, better desk. Nothing about your setup changes.', link: ['claude-and-gemini/', 'See exactly what each CLI supports'] },
         { t: 'Phone access, off by default', p: `Remote access from the Claude app is off until you turn it on, chat by chat, with Continue on phone. Chats get readable names there.`, why: 'No junk sessions flooding your phone.', status: 'Claude only' },
       ],
     },
@@ -53,6 +53,15 @@ export const groups = (c) => {
       intro: 'Real, and thinner than Claude support. It says so here.',
       items: [
         { t: 'Gemini CLI in the chat view', p: `Gemini CLI chats run in the chat view for API-key, paid and company plans: model and mode lists, approvals, file edits with diffs, and finished replies. The terminal is always available as a fallback. A chat shows its model and account in the header.`, why: 'One place for both tools, side by side.', link: ['claude-and-gemini/', 'What Gemini support covers, and what is missing'], status: 'Young' },
+      ],
+    },
+    {
+      id: 'more-clis', title: 'Antigravity, Grok Build and Cursor CLI',
+      intro: 'Three more CLIs next to Claude Code and Gemini CLI. Each is thinner than Claude support, and the page says where.',
+      items: [
+        { t: 'Grok Build and Cursor CLI in the chat view', p: `Pick Grok or Cursor as the CLI of a chat, with the Chat | Terminal switch and a new chat in terminal (${K('⌥', '⌘', 'T')}). Grok chats show cost and how full the conversation is, and Grok queues your next message itself. The Cursor model menu marks every model Included in your plan or Billed per token, so a paid model is never picked by surprise. ${N} never signs in for you: a missing or signed-out CLI gets a notice that says what to run.`, why: 'Five tools, one window per project.', link: ['claude-and-gemini/', 'What each CLI supports, and what is missing'], status: 'Young' },
+        { t: 'Antigravity as a terminal tab', p: `Google’s Antigravity CLI opens as a terminal tab you type into, each Google account with its own folder. ${N} never types for it and never switches your account.`, why: 'Google’s FAQ does not support wrapping it on consumer plans, so it stays a terminal.', status: 'Terminal only' },
+        { t: 'A control a CLI cannot offer stays put', p: `Effort, the context meter, Fork, Fast mode, Output style, the MCP list and phone access stay in place when a CLI cannot do them. They are dimmed, and the reason shows when you hover. They do not disappear when you switch CLI.`, why: 'Controls stay where your hand expects them.' },
       ],
     },
     {

@@ -217,7 +217,7 @@ export function home(c) {
       <li><span class="num">4</span><b>Send</b><small>Now the CLI is locked for this chat</small></li>
     </ol>
     <div class="clis">${clis.map((x) => `<div class="card"><p class="depth${x.d === 'Terminal only' ? ' term' : ''}">${esc(x.d)}</p><h3>${esc(x.n)}</h3><p class="muted">${x.p}</p><ul>${x.l.map((i) => `<li>${esc(i)}</li>`).join('')}</ul></div>`).join('')}</div>
-    <p style="margin-top:1.5rem"><a href="${url('claude-and-gemini/')}">Claude Code and Gemini CLI support, item by item</a></p>
+    <p style="margin-top:1.5rem"><a href="${url('claude-and-gemini/')}">What each of the five CLIs supports, item by item</a></p>
   </div>
 </section>
 <section class="band" id="different">
