@@ -14,7 +14,7 @@ const VARIANTS = {
   default: [cfg.brand.tagline, 'One window per project, over the coding CLIs you already use.'],
   features: ['Everything it does, in plain words.', 'Projects, chats, terminals, approvals, permissions, panels, archive.'],
   privacy: ['Your data stays on your Mac.', 'No account, no analytics, no telemetry.'],
-  support: ['Claude Code and Gemini CLI, and what is not covered yet.', 'An honest support list.'],
+  support: ['Five coding CLIs, and what is not covered yet.', 'An honest support list.'],
   who: ['What you do not realise you are paying for.', 'The daily frictions of running agents on many projects.'],
 };
 const tmp = mkdtempSync(join(tmpdir(), 'og-'));

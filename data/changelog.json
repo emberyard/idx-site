@@ -2,6 +2,46 @@
  "source": "packages/protocol/src/changelog.ts",
  "entries": [
   {
+   "version": "0.1.41",
+   "date": "2026-10-24",
+   "headlines": [
+    "A Settings chip in every chat lists each chat setting with its value.",
+    "Big projects no longer freeze the Files panel or get the host restarted."
+   ],
+   "new": [
+    "A Settings chip, last in the chat toolbar, lists every chat setting with its value: CLI, account and plan, model, effort, permission mode, Fast mode, output style and context. Most can be changed right there.",
+    "Grok: pick reasoning effort and model in the chat, and they are passed to Grok when you start it in a terminal. Set a default in Settings, or pin one per project.",
+    "HTML files and files outside the project open in the Browser panel."
+   ],
+   "improved": [
+    "Grok queues your next message itself. The bubble says \"Queued in Grok\" and how many are ahead.",
+    "Every sentence about sending names the CLI you are using, not another one.",
+    "The footer of a long turn reads \"112k in context · 362k processed\".",
+    "Fast mode says it is billed as extra usage on a Claude plan."
+   ],
+   "fixed": [
+    "A very large project no longer shows a blank Files panel and \"Connection closed\". Folders load as you open them, and IDX watches open folders only.",
+    "A huge project no longer keeps the host so busy that IDX restarts it."
+   ]
+  },
+  {
+   "version": "0.1.40",
+   "date": "2026-10-23",
+   "headlines": [
+    "New chat in terminal (⌥⌘T) now works for Grok and Cursor too.",
+    "A control your CLI cannot offer stays where it is, dimmed, and tells you why when you hover it."
+   ],
+   "new": [
+    "New chat in terminal (⌥⌘T) starts Grok and Cursor chats in their own terminal. Both ask you to trust the folder the first time, and IDX never answers for you.",
+    "A trust or approval screen in the terminal shows the chat as \"Needs you\". Gemini stays chat view only, and the card says so in one line."
+   ],
+   "improved": [
+    "Controls a CLI cannot offer (effort, context meter, Fork, Fast mode, Output style, MCP servers, phone entries) stay in place, dimmed, with the reason on hover. They no longer disappear when you switch CLI.",
+    "The context meter says \"Not reported by Cursor\" (or Gemini, Antigravity) instead of showing nothing.",
+    "The chat toolbar no longer overflows in a very narrow pane."
+   ]
+  },
+  {
    "version": "0.1.39",
    "date": "2026-10-23",
    "headlines": [
